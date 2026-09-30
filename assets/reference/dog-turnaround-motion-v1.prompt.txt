@@ -1,0 +1,12 @@
+생성 도구: 내장 image_gen
+용도: 3D 제작용 외형 및 동작 참고. 게임용 모델/리깅/프레임 시트 아님.
+
+Use case: stylized-concept
+Asset type: character turnaround and locomotion reference sheet for a Godot 2.5D platformer.
+Input image: reference for the EXACT protagonist identity, anatomy, materials and equipment, not background.
+Create a polished large landscape production reference sheet on a plain warm light gray background. The subject is precisely this white Korean spitz/Jindo-like adventure dog: pointed ears, dark almond eyes, black nose, athletic compact four-legged body, fluffy curled tail, muted rusty red neck scarf, brown leather adventure saddlebags and harness, olive rolled bedroll on back, small metal canteen, round brass compass pendant on chest. Preserve the reference's attractive semi-realistic 3D animated-film rendering; do not turn into a blocky or chibi dog. Maintain identical accessory placement and proportions across all views. No scenery.
+Layout: a spacious orderly 3-row x 4-column grid, twelve fully separated full-body dog illustrations, no overlap or cropping, ample margins. Uniform character scale and camera height.
+Row 1 is turnaround: strict front view, strict left side profile facing right, strict rear view, three-quarter front hero view.
+Row 2 is four successive RUN cycle key poses, all strict side view facing right: rear-leg propulsion, airborne extended stride, front paws contact, gathered passing pose. Real quadruped running anatomy, four legs only, preserve equipment.
+Row 3 is four JUMP key poses, all strict side view facing right: anticipation crouch, upward takeoff hind legs pushing, airborne apex paws tucked, landing compression front paws grounded and hind paws settling. Show actual expressive changes in silhouette, ears and scarf follow-through. Keep anatomy plausible, no extra legs or duplicate tails.
+Small clear headings above rows only: "TURNAROUND", "RUN — KEY POSES", "JUMP — KEY POSES". No other text, no motion blur, no arrows, no decorative framing, no watermark. Soft neutral studio light and very faint ground contact shadows; all details readable for a 3D artist. This is a visual reference sheet, not a finished spritesheet or executable rig.
