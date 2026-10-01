@@ -2,8 +2,9 @@ extends Node3D
 
 const Dog = preload("res://scripts/dog.gd")
 const START := Vector3(-5.5, 0.05, 0)
-# x, top, width, object. Every landing belongs to visible solid geometry.
-const ROUTE := [
+# x, top, width, object. Generated from landing size and difficulty in _ready().
+var ROUTE: Array = []
+const OBSTACLE_BASE := [
 	[-3.5,1.1,1.8,"jar"], [-1.3,2.4,2.0,"jangdokdae"],
 	[1.0,3.8,2.2,"cushion"], [3.2,5.2,2.1,"cushion"],
 	[-0.3,6.9,1.7,"jar"], [-1.9,8.6,1.6,"cushion"],
@@ -26,6 +27,20 @@ func prop(kind: String, at: Vector3, variation := 0, horizontal_scale := 1.0, ve
 	instance.scale = Vector3(horizontal_scale,vertical_scale,horizontal_scale)
 	instance.position = at
 	add_child(instance)
+
+func generate_obstacle_route() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	var previous_top := 0.0
+	for i in OBSTACLE_BASE.size():
+		var base: Array = OBSTACLE_BASE[i]
+		var progress := float(i)/maxf(1.0,float(OBSTACLE_BASE.size()-1))
+		var previous_base_top := 0.0 if i == 0 else float(OBSTACLE_BASE[i-1][1])
+		var rise := float(base[1])-previous_base_top+rng.randf_range(-0.03,0.03)*lerpf(0.4,1.0,progress)
+		previous_top += rise
+		var x_jitter := rng.randf_range(-0.06,0.06)*lerpf(0.35,1.0,progress)
+		var width := float(base[2])*rng.randf_range(0.98,1.02)
+		ROUTE.append([float(base[0])+x_jitter,previous_top,width,base[3]])
 
 func _ready() -> void:
 	var bindings := {"left":[KEY_A,KEY_LEFT], "right":[KEY_D,KEY_RIGHT], "jump":[KEY_SPACE]}
@@ -52,6 +67,7 @@ func _ready() -> void:
 	sun.shadow_enabled = true
 	add_child(sun)
 	add_child(preload("res://scripts/solid_ground.gd").new())
+	generate_obstacle_route()
 	# Only reusable gameplay props; no placeholder buildings, beams or scenery blocks.
 	for row in ROUTE:
 		var x := float(row[0])
@@ -69,14 +85,8 @@ func _ready() -> void:
 	var foods := preload("res://scripts/food_scatter.gd").new()
 	foods.name = "FoodScatter"
 	add_child(foods)
-	var food_top := 25.3
-	var food_x := -2.0
-	for i in 36:
-		var progress := float(i)/35.0
-		food_top += lerpf(1.75,2.0,progress)
-		food_x += lerpf(2.2,3.0,progress) * (1.0 if i%2 == 0 else -1.0)
-		food_route.append([food_x,food_top,lerpf(2.3,1.4,progress),"food"])
-	foods.scatter(food_route)
+	var last_obstacle: Array = ROUTE[-1]
+	foods.scatter(food_route,Vector2(float(last_obstacle[0]),float(last_obstacle[1])),float(last_obstacle[2]))
 	dog = Dog.new()
 	add_child(dog)
 	dog.teleport(START)
