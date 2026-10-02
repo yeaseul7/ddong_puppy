@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/planters.png" id="1_dd5vb"]
+
+[node name="planters" type="StaticBody2D" unique_id=1147955071]
+
+[node name="@Sprite2D@29" type="Sprite2D" parent="." unique_id=1042606483]
+position = Vector2(-25.683514, -83.47142)
+scale = Vector2(0.12841757, 0.12841757)
+texture = ExtResource("1_dd5vb")
+centered = false
+
+[node name="@CollisionPolygon2D@30" type="CollisionPolygon2D" parent="." unique_id=1019219224]
+polygon = PackedVector2Array(-23.115162, 11.557581, 125.84921, 21.830986, 130.98592, 38.52527, 114.29163, 44.30406, -23.115162, 32.104393)
+
+[node name="@CollisionPolygon2D@31" type="CollisionPolygon2D" parent="." unique_id=793115705]
+polygon = PackedVector2Array(-10.915493, 0, 11.557581, 0, 12.841757, 12.841757, -10.915493, 10.915493)
+
+[node name="@CollisionPolygon2D@32" type="CollisionPolygon2D" parent="." unique_id=1101273507]
+polygon = PackedVector2Array(15.410108, 3.852527, 44.946148, 6.4208784, 46.230324, 16.694284, 15.410108, 14.125933)
+
+[node name="@CollisionPolygon2D@33" type="CollisionPolygon2D" parent="." unique_id=617469950]
+polygon = PackedVector2Array(46.230324, 6.4208784, 77.05054, 8.989229, 77.05054, 19.262634, 46.230324, 16.694284)
+
+[node name="@CollisionPolygon2D@34" type="CollisionPolygon2D" parent="." unique_id=1928717760]
+polygon = PackedVector2Array(79.61889, 8.989229, 102.734055, 12.841757, 102.734055, 21.830986, 79.61889, 19.262634)
+
+[node name="@CollisionPolygon2D@35" type="CollisionPolygon2D" parent="." unique_id=187525446]
+polygon = PackedVector2Array(106.58658, 11.557581, 125.84921, 12.841757, 125.84921, 23.115162, 106.58658, 23.115162)

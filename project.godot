@@ -12,7 +12,11 @@ config_version=5
 
 config/name="똥강아지 · 마당에서 지붕까지"
 run/main_scene="res://lobby.tscn"
-config/features=PackedStringArray("4.7")
+config/features=PackedStringArray("4.6")
+
+[autoload]
+
+DisplaySettings="*res://scripts/display_settings.gd"
 
 [display]
 

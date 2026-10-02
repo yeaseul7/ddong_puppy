@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/brick_well.png" id="1_e7fjl"]
+
+[node name="brick_well" type="StaticBody2D" unique_id=903701377]
+
+[node name="@Sprite2D@9" type="Sprite2D" parent="." unique_id=1653622657]
+position = Vector2(-78.568535, -37.712894)
+scale = Vector2(0.12570965, 0.12570965)
+texture = ExtResource("1_e7fjl")
+centered = false
+
+[node name="@CollisionPolygon2D@10" type="CollisionPolygon2D" parent="." unique_id=2092120240]
+polygon = PackedVector2Array(-19.484997, 0, 19.484997, 0, 49.65531, 13.828062, 55.940796, 37.712894, 52.169506, 67.88321, 29.541769, 79.19708, -34.570156, 79.19708, -53.4266, 54.05515, -52.169506, 18.856447)

@@ -74,7 +74,7 @@ func run() -> void:
 	assert(dog.velocity.y > 0 and dog.animation_state == "jump")
 	await tick(10)
 	assert(absf(dog.position.x-launch_x)<0.001, "Neutral jump must not drift forward")
-	assert(dog.model.torso.rotation.z > 0.3, "Jump pose must lift chest upward")
+	assert(dog.model.get_chest_pitch() > 0.25, "Jump pose must lift chest upward")
 	Input.action_press("jump")
 	await tick(2)
 	Input.action_release("jump")

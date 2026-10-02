@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/onggi_wide.png" id="1_wxxm0"]
+
+[node name="onggi_wide" type="StaticBody2D" unique_id=1834431230]
+
+[node name="@Sprite2D@4" type="Sprite2D" parent="." unique_id=2008034339]
+position = Vector2(-77.25279, -26.57496)
+scale = Vector2(0.12360447, 0.12360447)
+texture = ExtResource("1_wxxm0")
+centered = false
+
+[node name="@CollisionPolygon2D@5" type="CollisionPolygon2D" parent="." unique_id=1962454971]
+polygon = PackedVector2Array(-21.630781, 0, 21.630781, 0, 40.17145, 7.4162683, 56.240032, 33.373207, 69.836525, 53.767944, 69.836525, 78.48884, 52.5319, 104.44578, 33.99123, 113.09809, -36.463318, 113.09809, -58.712124, 98.26556, -69.836525, 73.54466, -69.218506, 56.240032, -55.62201, 29.04705, -41.407497, 7.4162683)

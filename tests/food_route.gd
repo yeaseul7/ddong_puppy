@@ -16,10 +16,23 @@ func run() -> void:
 	scene.set_process(false)
 	var dog = scene.dog
 	var previous: Vector3 = scene.START
-	for row in scene.ROUTE + scene.food_route:
+	var course: Array = scene.ROUTE + scene.food_route
+	if "--shortcut" in OS.get_cmdline_user_args():
+		course = scene.ROUTE.slice(0,8) + [scene.SHORTCUT] + scene.ROUTE.slice(10) + scene.food_route
+	for row in course:
 		dog.teleport(previous)
 		await tick(20)
-		assert(dog.is_on_floor(), "Start surface must be solid")
+		if not dog.is_on_floor():
+			push_error("Unstable start %s before %s" % [previous,row])
+			quit(1)
+			return
+		# The low ceiling requires walking to the exposed right edge before jumping.
+		if row == scene.ROUTE[4]:
+			Input.action_press("right")
+			for frame in 80:
+				await tick()
+				if dog.position.x >= 2.5: break
+			Input.action_release("right")
 		Input.action_press("jump")
 		await tick(2)
 		Input.action_release("jump")
@@ -52,7 +65,23 @@ func run() -> void:
 			quit(1)
 			return
 		previous = dog.position+Vector3(0,0.05,0)
-	print("PASS: all 50 route jumps and solid landings")
+	print("PASS: all authored sections and food route jumps")
+	# A failed right-side jump is caught below instead of respawning.
+	dog.teleport(Vector3(4.1,3.7,0))
+	await tick(90)
+	assert(dog.is_on_floor() and absf(dog.position.y-2.1)<0.12)
+	# Jumping straight up under the overhead cushion hits its underside.
+	dog.teleport(Vector3(1.0,4.05,0))
+	await tick(20)
+	Input.action_press("jump")
+	await tick(2)
+	Input.action_release("jump")
+	var peak: float = dog.position.y
+	for i in 60:
+		await tick()
+		peak = maxf(peak,dog.position.y)
+	assert(peak < 4.9)
+	print("PASS: recovery cushion and low ceiling collision")
 	for direction in [-1, 1]:
 		dog.teleport(Vector3(direction * 7.8, 35, 0))
 		Input.action_press("left" if direction < 0 else "right")

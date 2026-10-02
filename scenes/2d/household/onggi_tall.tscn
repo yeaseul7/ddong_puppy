@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/onggi_tall.png" id="1_owo6p"]
+
+[node name="onggi_tall" type="StaticBody2D" unique_id=164728361]
+
+[node name="@Sprite2D@2" type="Sprite2D" parent="." unique_id=1457023257]
+position = Vector2(-83.657166, -11.377375)
+scale = Vector2(0.13385147, 0.13385147)
+texture = ExtResource("1_owo6p")
+centered = false
+
+[node name="@CollisionPolygon2D@3" type="CollisionPolygon2D" parent="." unique_id=1839182386]
+polygon = PackedVector2Array(-22.085493, 0, 23.424007, 0, 40.15544, 8.700345, 54.209846, 32.79361, 66.25648, 70.27202, 66.25648, 103.734886, 50.1943, 134.52072, 34.132126, 147.90587, -24.762522, 147.90587, -48.855785, 130.50519, -66.25648, 99.719345, -67.59499, 70.27202, -54.209846, 38.147667, -40.8247, 9.369603)

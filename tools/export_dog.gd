@@ -35,10 +35,10 @@ func export_model() -> void:
 	var state := GLTFState.new()
 	var error := document.append_from_scene(model,state)
 	if error == OK:
-		error = document.write_to_filesystem(state,"res://assets/characters/dog/white_puppy_v2.glb")
+		error = document.write_to_filesystem(state,"res://assets/characters/dog/white_dog_v3.glb")
 	if error != OK:
 		push_error("GLB export failed: %s"%error)
 		quit(1)
 		return
-	print("PASS: exported white_puppy_v2.glb with six transform-animation clips")
+	print("PASS: exported white_dog_v3.glb with six transform-animation clips")
 	quit()

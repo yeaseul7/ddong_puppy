@@ -15,7 +15,7 @@ var animation_state := "idle"
 var clock := 0.0
 
 func _ready() -> void:
-	name = "WhitePuppy"
+	name = "WhiteDogV3"
 	materials = {
 		"fur": material("eae9e3"), "cream": material("deddd5"),
 		"pink": material("d3aaa6"), "dark": material("242629"),
@@ -89,10 +89,10 @@ func tail_mesh() -> ArrayMesh:
 	var normals: Array[Vector3] = []
 	for ring in 33:
 		var t := float(ring)/32
-		var angle := -0.60-t*4.5
-		var center := Vector3(-0.12+cos(angle)*0.16,0.20+sin(angle)*0.20,0)
+		var angle := -PI/2-t*4.1
+		var center := Vector3(0.03+cos(angle)*0.20,0.24+sin(angle)*0.23,0)
 		var outward := Vector3(cos(angle),sin(angle),0).normalized()
-		var radius := 0.112*(1.0-pow(t,3)*0.92)
+		var radius := 0.063*(1.0-pow(t,4)*0.8)
 		for segment in 12:
 			var theta := TAU*segment/12
 			var normal := outward*cos(theta)+Vector3.FORWARD*sin(theta)
@@ -142,54 +142,68 @@ func loft(profile: Array) -> ArrayMesh:
 	return surface.commit()
 
 func build() -> void:
-	torso = joint(self,"Torso",Vector3(0,0.52,0))
+	torso = joint(self,"Torso",Vector3(0,0.76,0))
 	shape(torso,"Body",loft([
-		[-0.49,0.01,0.001,0.001],[-0.46,0.015,0.10,0.10],
-		[-0.39,0.025,0.19,0.185],[-0.27,0.025,0.22,0.22],
-		[-0.12,0.015,0.21,0.225],[0.02,0.025,0.225,0.23],
-		[0.16,0.075,0.255,0.235],[0.28,0.13,0.245,0.21],
-		[0.36,0.17,0.18,0.15],[0.42,0.17,0.001,0.001]
+		[-0.65,0.03,0.001,0.001],[-0.61,0.035,0.12,0.10],
+		[-0.52,0.025,0.23,0.18],[-0.37,0.025,0.24,0.195],
+		[-0.18,0.055,0.20,0.18],[0.03,0.055,0.205,0.18],
+		[0.23,0.03,0.27,0.215],[0.37,0.10,0.31,0.21],
+		[0.47,0.19,0.25,0.17],[0.55,0.24,0.001,0.001]
 	]),Vector3.ZERO,"fur")
-	# Fuller neck and cheeks, shorter muzzle and sturdy paws: young white spitz.
-	oval(torso,"NeckRuff",Vector3(0.24,0.23,0),Vector3(0.39,0.37,0.39),"fur")
-	head = joint(torso,"Head",Vector3(0.31,0.31,0))
+	# Taller sloping neck, relatively small head and a tapered adult-dog muzzle.
+	var neck := oval(torso,"Neck",Vector3(0.40,0.27,0),Vector3(0.32,0.57,0.31),"fur")
+	neck.rotation.z = -0.34
+	head = joint(torso,"Head",Vector3(0.50,0.49,0))
 	shape(head,"Face",loft([
-		[-0.235,0.07,0.001,0.001],[-0.20,0.065,0.12,0.12],
-		[-0.14,0.06,0.19,0.185],[-0.055,0.055,0.22,0.22],
-		[0.035,0.035,0.21,0.224],[0.105,0.010,0.165,0.187],
-		[0.15,-0.005,0.108,0.125],[0.215,-0.013,0.074,0.09],
-		[0.27,-0.005,0.045,0.065],[0.295,0,0.001,0.001]
+		[-0.20,0.035,0.001,0.001],[-0.16,0.035,0.11,0.10],
+		[-0.09,0.03,0.165,0.14],[0.015,0.025,0.17,0.15],
+		[0.105,0.005,0.13,0.125],[0.17,-0.023,0.077,0.092],
+		[0.25,-0.03,0.059,0.071],[0.34,-0.025,0.044,0.053],
+		[0.375,-0.025,0.001,0.001]
 	]),Vector3.ZERO,"fur")
-	oval(head,"Nose",Vector3(0.277,0.025,0),Vector3(0.075,0.063,0.105),"dark")
-	oval(head,"NoseHighlight",Vector3(0.299,0.045,0.014),Vector3(0.010,0.008,0.035),"cream")
+	oval(head,"Nose",Vector3(0.354,-0.008,0),Vector3(0.069,0.057,0.086),"dark")
+	oval(head,"NoseHighlight",Vector3(0.374,0.009,0.012),Vector3(0.010,0.007,0.022),"cream")
 	for side in [-1.0,1.0]:
 		var suffix := "Near" if side > 0 else "Far"
-		var eye := oval(head,"Eye"+suffix,Vector3(0.077,0.103,side*0.185),Vector3(0.078,0.073,0.033),"dark")
+		var eye := oval(head,"Eye"+suffix,Vector3(0.074,0.069,side*0.129),Vector3(0.066,0.042,0.024),"dark")
 		eye.rotation.y = side*0.32
-		oval(head,"Iris"+suffix,Vector3(0.085,0.103,side*0.198),Vector3(0.041,0.044,0.013),"eye")
-		oval(head,"Glint"+suffix,Vector3(0.090,0.117,side*0.206),Vector3(0.019,0.022,0.007),"glint")
-		oval(head,"GlintSmall"+suffix,Vector3(0.072,0.095,side*0.205),Vector3(0.008,0.009,0.005),"glint")
+		oval(head,"Iris"+suffix,Vector3(0.083,0.069,side*0.140),Vector3(0.031,0.030,0.011),"eye")
+		oval(head,"Glint"+suffix,Vector3(0.087,0.078,side*0.148),Vector3(0.011,0.012,0.006),"glint")
+		oval(head,"GlintSmall"+suffix,Vector3(0.073,0.062,side*0.146),Vector3(0.006,0.006,0.004),"glint")
 		# A tiny lip at the corner, no dark line across the entire muzzle.
-		var lip := oval(head,"Smile"+suffix,Vector3(0.198,-0.053,side*0.069),Vector3(0.083,0.008,0.013),"dark")
+		var lip := oval(head,"Smile"+suffix,Vector3(0.27,-0.054,side*0.059),Vector3(0.115,0.006,0.009),"dark")
 		lip.rotation.z = 0.10
-		var ear := joint(head,"Ear"+suffix,Vector3(-0.075,0.197,side*0.131))
+		var ear := joint(head,"Ear"+suffix,Vector3(-0.055,0.155,side*0.10))
 		var outer := shape(ear,"Outer",ear_mesh(),Vector3.ZERO,"fur")
-		outer.scale = Vector3(1.7,0.75,1.12)
+		outer.scale = Vector3(1.5,0.90,0.94)
 		var inset := shape(ear,"Inner",ear_mesh(),Vector3(0.032,0.022,0),"pink")
 		inset.material_override = materials.pink
-		inset.scale = Vector3(1.18,0.47,0.69)
+		inset.scale = Vector3(1.06,0.63,0.59)
 		ear.rotation.x = side*0.15
 		ears.append(ear)
 		for front in [true,false]:
 			var id := ("Front" if front else "Back")+suffix
-			var hip := joint(torso,id,Vector3(0.23 if front else -0.28,-0.06,side*0.155))
-			oval(hip,"Upper",Vector3(0,-0.085,0),Vector3(0.17 if front else 0.22,0.30,0.17),"fur")
-			var knee := joint(hip,"Knee",Vector3(0,-0.20,0))
-			oval(knee,"Shin",Vector3(0,-0.085,0),Vector3(0.122,0.25,0.125),"fur")
-			oval(knee,"Paw",Vector3(0.032,-0.201,0),Vector3(0.19,0.105,0.15),"fur")
+			var hip := joint(torso,id,Vector3(0.34 if front else -0.48,-0.065,side*0.145))
+			# Tapered anatomical limbs replace the stacked ball-like joints.
+			var upper := shape(hip,"Upper",loft([
+				[-0.11,0,0.001,0.001],[-0.06,0,0.075 if front else 0.12,0.08],
+				[0.03,0,0.085 if front else 0.135,0.085],
+				[0.15,0.0 if front else 0.055,0.061 if front else 0.085,0.065],
+				[0.29,0.0 if front else 0.055,0.041,0.046],[0.36,0.0 if front else 0.055,0.001,0.001]
+			]),Vector3.ZERO,"fur")
+			upper.rotation.z = -PI/2
+			var knee := joint(hip,"Knee",Vector3(0 if front else 0.055,-0.30,0))
+			var shin := shape(knee,"Shin",loft([
+				[-0.06,0,0.001,0.001],[-0.025,0,0.045,0.049],
+				[0.08,0 if front else -0.03,0.043,0.045],
+				[0.22,0 if front else -0.095,0.033,0.036],
+				[0.30,0 if front else -0.09,0.035,0.037],[0.35,0 if front else -0.08,0.001,0.001]
+			]),Vector3.ZERO,"fur")
+			shin.rotation.z = -PI/2
+			oval(knee,"Paw",Vector3(0.032 if front else -0.055,-0.35,0),Vector3(0.16,0.085,0.10),"fur")
 			hips.append(hip)
 			knees.append(knee)
-	tail = joint(torso,"Tail",Vector3(-0.43,0.065,0))
+	tail = joint(torso,"Tail",Vector3(-0.57,0.17,0))
 	shape(tail,"CurledTail",tail_mesh(),Vector3.ZERO,"fur")
 
 func animate(delta: float, state: String) -> void:
@@ -202,7 +216,7 @@ func animate(delta: float, state: String) -> void:
 
 func pose(state: String, seconds: float) -> void:
 	var phase := seconds/float(CLIPS.get(state,1.0))*TAU
-	torso.position = Vector3(0,0.52,0)
+	torso.position = Vector3(0,0.76,0)
 	torso.rotation = Vector3.ZERO
 	torso.scale = Vector3.ONE
 	head.rotation = Vector3.ZERO

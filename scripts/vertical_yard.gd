@@ -4,15 +4,20 @@ const Dog = preload("res://scripts/dog.gd")
 const START := Vector3(-5.5, 0.05, 0)
 # x, top, width, object. Generated from landing size and difficulty in _ready().
 var ROUTE: Array = []
+# Authored first three sections; randomize appearance, not their solution geometry.
 const OBSTACLE_BASE := [
-	[-3.5,1.1,1.8,"jar"], [-1.3,2.4,2.0,"jangdokdae"],
-	[1.0,3.8,2.2,"cushion"], [3.2,5.2,2.1,"cushion"],
-	[-0.3,6.9,1.7,"jar"], [-1.9,8.6,1.6,"cushion"],
-	[-4.5,10.4,1.5,"cushion"], [-1.7,12.3,1.5,"jangdokdae"],
-	[1.3,14.3,1.3,"jar"], [4.3,16.3,1.3,"cushion"],
-	[1.1,18.5,1.1,"cushion"], [-2.1,20.7,1.05,"jar"],
-	[-5.4,23.0,0.95,"cushion"], [-2.0,25.3,0.9,"cushion"]
+	[-4.0,0.7,1.8,"jar"], [-2.5,1.6,1.9,"jar"],
+	[-0.9,2.7,2.0,"jangdokdae"], [1.6,4.0,3.4,"cushion"],
+	[3.8,5.4,1.7,"jar"], [1.0,5.8,1.8,"cushion"],
+	[-2.0,7.3,1.8,"jar"], [-4.2,8.7,2.0,"cushion"],
+	[-6.1,10.0,1.9,"cushion"], [-4.8,11.3,1.2,"cushion"],
+	[-0.5,12.8,1.2,"cushion"], [2.4,14.3,1.7,"cushion"],
+	[4.3,16.3,1.3,"cushion"], [1.1,18.5,1.1,"cushion"],
+	[-2.1,20.7,1.05,"jar"], [-5.4,23.0,0.95,"cushion"],
+	[-2.0,25.3,0.9,"cushion"]
 ]
+const SHORTCUT := [-1.6,11.0,0.75,"cushion"]
+const CATCH := [4.1,2.1,2.4,"cushion"]
 
 var dog: CharacterBody3D
 var camera: Camera3D
@@ -29,18 +34,7 @@ func prop(kind: String, at: Vector3, variation := 0, horizontal_scale := 1.0, ve
 	add_child(instance)
 
 func generate_obstacle_route() -> void:
-	var rng := RandomNumberGenerator.new()
-	rng.randomize()
-	var previous_top := 0.0
-	for i in OBSTACLE_BASE.size():
-		var base: Array = OBSTACLE_BASE[i]
-		var progress := float(i)/maxf(1.0,float(OBSTACLE_BASE.size()-1))
-		var previous_base_top := 0.0 if i == 0 else float(OBSTACLE_BASE[i-1][1])
-		var rise := float(base[1])-previous_base_top+rng.randf_range(-0.03,0.03)*lerpf(0.4,1.0,progress)
-		previous_top += rise
-		var x_jitter := rng.randf_range(-0.06,0.06)*lerpf(0.35,1.0,progress)
-		var width := float(base[2])*rng.randf_range(0.98,1.02)
-		ROUTE.append([float(base[0])+x_jitter,previous_top,width,base[3]])
+	ROUTE = OBSTACLE_BASE.duplicate(true)
 
 func _ready() -> void:
 	var bindings := {"left":[KEY_A,KEY_LEFT], "right":[KEY_D,KEY_RIGHT], "jump":[KEY_SPACE]}
@@ -69,13 +63,13 @@ func _ready() -> void:
 	add_child(preload("res://scripts/solid_ground.gd").new())
 	generate_obstacle_route()
 	# Only reusable gameplay props; no placeholder buildings, beams or scenery blocks.
-	for row in ROUTE:
+	for row in ROUTE + [SHORTCUT, CATCH]:
 		var x := float(row[0])
 		var top := float(row[1])
 		var width := float(row[2])
 		var kind := str(row[3])
 		if kind == "jar":
-			var jar_scale := 1.0 if top < 2.0 else 0.6
+			var jar_scale := top/1.1 if top < 2.0 else 0.6
 			prop("jar",Vector3(x,top-1.1*jar_scale,0),int(top/6.0)%3,width/1.6,jar_scale)
 		elif kind == "jangdokdae":
 			var stand_scale := 1.0 if top < 3.0 else 0.5
@@ -117,7 +111,8 @@ func _process(delta: float) -> void:
 	var target := Vector3(clampf(dog.position.x*0.35,-1.5,1.5),maxf(3.3,dog.position.y+1.7),20)
 	camera.position = camera.position.lerp(target,1.0-exp(-5.0*delta))
 	update_background()
-	status.text = "항아리 · 장독대 · 방석 → 음식 등반  |  최고 %.1fm\nA/D 이동 · SPACE 2단 점프 · ESC 로비" % best
+	var section := "물건 더미 · 작은 발판부터" if dog.position.y < 4.0 else ("낮은 천장 · 오른쪽 끝에서 점프" if dog.position.y < 8.7 else ("갈림길 · 왼쪽 우회 / 오른쪽 좁은 지름길" if dog.position.y < 14.5 else "상단 등반"))
+	status.text = section + "\n항아리 · 장독대 · 방석 → 음식 등반  |  최고 %.1fm\nA/D 이동 · SPACE 2단 점프 · ESC 로비" % best
 	if dog.position.y > float(food_route[-1][1])-0.4 and dog.is_on_floor():
 		status.text += "\n음식 코스 정상에 도착했습니다"
 

@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/brass_kettle.png" id="1_rud6k"]
+
+[node name="brass_kettle" type="StaticBody2D" unique_id=513177898]
+
+[node name="@Sprite2D@8" type="Sprite2D" parent="." unique_id=712744337]
+position = Vector2(-90.341385, -7.098252)
+scale = Vector2(0.12905912, 0.12905912)
+texture = ExtResource("1_rud6k")
+centered = false
+
+[node name="@CollisionPolygon2D@9" type="CollisionPolygon2D" parent="." unique_id=394195057]
+polygon = PackedVector2Array(-14.196504, 0, 14.196504, 0, 36.136555, 7.098252, 34.20067, 19.358868, 12.905912, 14.196504, -12.905912, 13.551208, -29.683598, 19.358868, -30.97419, 9.034139)
+
+[node name="@CollisionPolygon2D@10" type="CollisionPolygon2D" parent="." unique_id=1230918747]
+polygon = PackedVector2Array(-30.97419, 9.034139, -29.683598, 19.358868, -39.363033, 29.683598, -40.65362, 44.5254, -33.55537, 58.7219, -40.65362, 65.82015, -45.170692, 49.687763, -45.170692, 29.038301, -40.008327, 17.422981)
+
+[node name="@CollisionPolygon2D@11" type="CollisionPolygon2D" parent="." unique_id=1573022180]
+polygon = PackedVector2Array(36.136555, 12.905912, 45.170692, 23.875937, 51.62365, 38.07244, 50.333057, 56.140717, 43.8801, 63.884266, 42.589508, 52.268944, 44.5254, 38.07244, 38.717735, 25.166529, 32.264782, 19.358868)
+
+[node name="@CollisionPolygon2D@12" type="CollisionPolygon2D" parent="." unique_id=753330163]
+polygon = PackedVector2Array(0, 32.264782, 10.970025, 32.264782, 15.487095, 35.491257, 14.841799, 47.751873, 30.97419, 51.62365, 43.8801, 60.657787, 51.62365, 72.9184, 63.238968, 88.405495, 64.529564, 114.21732, 52.914238, 133.57619, 36.78185, 145.19151, -21.94005, 147.77269, -43.8801, 136.15738, -51.62365, 118.089096, -50.333057, 93.56786, -44.5254, 74.20899, -32.910076, 62.593674, -26.457119, 54.20483, -5.162365, 47.751873, -5.8076606, 36.136555)
+
+[node name="@CollisionPolygon2D@13" type="CollisionPolygon2D" parent="." unique_id=472123343]
+polygon = PackedVector2Array(-80.66195, 61.94838, -69.04663, 60.012493, -61.94838, 69.04663, -50.97835, 88.405495, -42.589508, 92.277275, -43.234806, 119.379684, -58.076603, 116.79851, -67.11074, 106.47378, -70.98251, 84.53372, -76.14488, 70.98251)

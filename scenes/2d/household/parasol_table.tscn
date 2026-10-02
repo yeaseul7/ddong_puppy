@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/parasol_table.png" id="1_p378y"]
+
+[node name="parasol_table" type="StaticBody2D" unique_id=1001480889]
+
+[node name="@Sprite2D@11" type="Sprite2D" parent="." unique_id=1253697122]
+position = Vector2(-79.3407, -10.790336)
+scale = Vector2(0.12694512, 0.12694512)
+texture = ExtResource("1_p378y")
+centered = false
+
+[node name="@CollisionPolygon2D@12" type="CollisionPolygon2D" parent="." unique_id=2001778048]
+polygon = PackedVector2Array(-18.407043, 0, 18.407043, 0, 48.87387, 13.329238, 74.26289, 36.17936, 72.99345, 43.796066, -71.72399, 43.796066, -74.26289, 36.17936, -46.33497, 12.059787)
+
+[node name="@CollisionPolygon2D@13" type="CollisionPolygon2D" parent="." unique_id=1442615308]
+polygon = PackedVector2Array(-1.9041768, 43.796066, 3.173628, 43.796066, 3.173628, 98.38247, -1.9041768, 98.38247)
+
+[node name="@CollisionPolygon2D@14" type="CollisionPolygon2D" parent="." unique_id=2123521478]
+polygon = PackedVector2Array(-27.293201, 88.22686, 23.484848, 88.22686, 41.257164, 97.11302, 37.44881, 108.53808, -38.71826, 108.53808, -41.257164, 97.11302)
+
+[node name="@CollisionPolygon2D@15" type="CollisionPolygon2D" parent="." unique_id=1541403503]
+polygon = PackedVector2Array(-23.484848, 108.53808, 20.945946, 108.53808, 20.945946, 137.73546, -23.484848, 137.73546)

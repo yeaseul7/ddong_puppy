@@ -8,7 +8,7 @@ var jumps := 0
 var coyote := 0.0
 var buffered := 0.0
 var facing := 1.0
-const Visual = preload("res://scripts/dog_visual.gd")
+const Visual = preload("res://scripts/jindo_visual.gd")
 var visual: Node3D
 var model: Node3D
 var landing_time := 0.0
@@ -26,7 +26,7 @@ func _ready() -> void:
 	visual = Node3D.new()
 	add_child(visual)
 	model = Visual.new()
-	model.scale = Vector3.ONE * 0.78
+	model.scale = Vector3.ONE * 0.65
 	visual.add_child(model)
 
 func _physics_process(delta: float) -> void:

@@ -29,9 +29,9 @@ func _ready() -> void:
 	floor_mesh.position.y = -0.02
 	add_child(floor_mesh)
 	for i in 4:
-		var model = load("res://scripts/dog_visual.gd").new()
+		var model = load("res://scripts/jindo_visual.gd").new()
 		add_child(model)
-		model.position.x = (i-1.5)*1.9
+		model.position.x = (i-1.5)*2.25
 		if i==0: model.rotation.y = -0.50
 		dogs.append(model)
 		var label := Label3D.new()
@@ -45,7 +45,7 @@ func _ready() -> void:
 		add_child(label)
 	var camera := Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 8.3
+	camera.size = 10.1
 	camera.keep_aspect = Camera3D.KEEP_WIDTH
 	camera.position = Vector3(0.6,2.8,12)
 	add_child(camera)

@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/2d/household/rattan_chair.png" id="1_q4fuv"]
+
+[node name="rattan_chair" type="StaticBody2D" unique_id=255246525]
+
+[node name="@Sprite2D@4" type="Sprite2D" parent="." unique_id=56774263]
+position = Vector2(-105.27824, -6.976269)
+scale = Vector2(0.12684125, 0.12684125)
+texture = ExtResource("1_q4fuv")
+centered = false
+
+[node name="@CollisionPolygon2D@5" type="CollisionPolygon2D" parent="." unique_id=1824733891]
+polygon = PackedVector2Array(-16.489363, 0, 16.489363, 0, 35.51555, 17.123568, 26.636662, 76.73895, -39.320786, 79.27578, -38.052376, 34.881344, -33.61293, 13.318331)
+
+[node name="@CollisionPolygon2D@6" type="CollisionPolygon2D" parent="." unique_id=2084030879]
+polygon = PackedVector2Array(-73.567924, 83.08102, -22.831425, 76.73895, 16.489363, 89.42308, -7.6104746, 110.98609, -74.836334, 100.83879)
+
+[node name="@CollisionPolygon2D@7" type="CollisionPolygon2D" parent="." unique_id=544706263]
+polygon = PackedVector2Array(-74.836334, 100.83879, -64.68903, 100.83879, -60.883797, 127.47546, -71.0311, 128.74387)
+
+[node name="@CollisionPolygon2D@8" type="CollisionPolygon2D" parent="." unique_id=1103184922]
+polygon = PackedVector2Array(-3.8052373, 103.37562, 7.6104746, 103.37562, 3.8052373, 138.89116, -6.3420625, 138.89116)

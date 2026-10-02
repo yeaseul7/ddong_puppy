@@ -4,10 +4,12 @@ func _initialize() -> void:
 func run() -> void:
 	var document := GLTFDocument.new()
 	var state := GLTFState.new()
-	assert(document.append_from_file("res://assets/characters/dog/white_puppy_v2.glb",state) == OK)
+	assert(document.append_from_file("res://assets/characters/jindo_v4/jindo_v4.glb",state) == OK)
 	var model := document.generate_scene(state)
 	assert(model != null)
 	root.add_child(model)
+	var rigs := model.find_children("*","Skeleton3D",true,false)
+	assert(rigs.size() == 1 and rigs[0].get_bone_count() >= 16, "Expected real skinned skeleton")
 	var players := model.find_children("*","AnimationPlayer",true,false)
 	assert(players.size()==1)
 	var player: AnimationPlayer = players[0]
