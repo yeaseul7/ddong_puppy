@@ -1,0 +1,1075 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/2d/map.gd" id="1_fj21y"]
+[ext_resource type="Texture2D" path="res://assets/environment/map02_starfield.png" id="2_hdh1n"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/onggi_tall.png" id="3_bdp6r"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/onggi_wide.png" id="4_teh5y"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/red_basket.png" id="5_svmwh"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/brass_kettle.png" id="6_ip2nr"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/ceramic_pot.png" id="7_6cddj"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/red_storage_box.png" id="8_32vxr"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/floral_floor_cushion.png" id="9_m1h4v"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/wooden_sliding_door.png" id="10_yppr7"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/blue_plastic_chair.png" id="11_rmj1o"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/rattan_rocking_chair.png" id="12_bl2hh"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/tall_leaf_planter.png" id="13_ssjbp"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/herb_planter.png" id="14_53w16"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/pink_flower_planter.png" id="15_1k2js"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/broad_leaf_planter.png" id="16_74tt5"]
+[ext_resource type="Texture2D" path="res://assets/2d/household/vintage_candy_tin.png" id="17_1y0ep"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/red_food_container.tscn" id="18_lkgrj"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/kimchi_bowl.tscn" id="19_8uj7o"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/tennis_rope_toy.tscn" id="20_6be7x"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/plush_fish.tscn" id="21_elnmq"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/spiky_bone_toy.tscn" id="22_883u7"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/plush_cow.tscn" id="23_gf8me"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/vegetable_toys.tscn" id="24_unnew"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/bumpy_balls.tscn" id="25_u50u3"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/wavy_rope.tscn" id="26_sp4jm"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/chicken_bone_toy.tscn" id="27_15m1w"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/plush_elephant.tscn" id="28_k4wd3"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/braided_rope.tscn" id="29_dhgnq"]
+[ext_resource type="PackedScene" path="res://scenes/2d/toys/rope_ball.tscn" id="30_ql6co"]
+[ext_resource type="Script" path="res://scripts/2d/ground_visual.gd" id="31_w4xgk"]
+[ext_resource type="Script" path="res://scripts/2d/dog.gd" id="32_1u7a0"]
+[ext_resource type="SpriteFrames" path="res://assets/2d/jindo_cartoon/animations.tres" id="33_7a78b"]
+
+[sub_resource type="RectangleShape2D" id="ground"]
+size = Vector2(1751.579, 1000)
+
+[sub_resource type="CapsuleShape2D" id="dog_shape"]
+radius = 26.0
+height = 80.0
+
+[node name="Map02_2D" type="Node2D" unique_id=460878792]
+script = ExtResource("1_fj21y")
+summit_height = 5160.0
+map_title = "두 번째 밤하늘"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=629872630]
+z_index = -100
+position = Vector2(-192.5, -1951.0632)
+scale = Vector2(2.1867404, 2.1867404)
+texture = ExtResource("2_hdh1n")
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1406498944]
+
+[node name="1_jang1" type="StaticBody2D" parent="Platforms" unique_id=1277046431]
+position = Vector2(-304, -137)
+metadata/route = true
+metadata/kind = "onggi_tall"
+
+[node name="@Sprite2D@38" type="Sprite2D" parent="Platforms/1_jang1" unique_id=640302388]
+position = Vector2(-78.66056, -16.763727)
+scale = Vector2(0.12895174, 0.12895174)
+texture = ExtResource("3_bdp6r")
+centered = false
+
+[node name="@CollisionPolygon2D@39" type="CollisionPolygon2D" parent="Platforms/1_jang1" unique_id=1041171535]
+polygon = PackedVector2Array(-34.81697, 0, 34.81697, 0, 58.028286, 33.527454, 65.76539, 70.92346, 55.44925, 117.346085, 34.81697, 134.10982, -28.369383, 134.10982, -50.29118, 112.18802, -61.896835, 70.92346, -52.870216, 33.527454)
+
+[node name="1_jang2" type="StaticBody2D" parent="Platforms" unique_id=1490864490]
+position = Vector2(-44, -260)
+metadata/route = true
+metadata/kind = "onggi_wide"
+
+[node name="@Sprite2D@45" type="Sprite2D" parent="Platforms/1_jang2" unique_id=998806715]
+position = Vector2(-78.568535, -37.712894)
+scale = Vector2(0.12570965, 0.12570965)
+texture = ExtResource("4_teh5y")
+centered = false
+
+[node name="@CollisionPolygon2D@46" type="CollisionPolygon2D" parent="Platforms/1_jang2" unique_id=953569296]
+polygon = PackedVector2Array(-24, -12, 21, -12, 44, -7, 69, 39, 64, 65, 51, 83, 37, 93, -1, 100, -39, 92, -61, 70, -68, 38, -46, -5)
+
+[node name="1_r_basket" type="StaticBody2D" parent="Platforms" unique_id=1209259517]
+position = Vector2(47, -650)
+metadata/route = true
+metadata/kind = "red_basket"
+
+[node name="@Sprite2D@59" type="Sprite2D" parent="Platforms/1_r_basket" unique_id=999370528]
+position = Vector2(-25.683514, -83.47142)
+scale = Vector2(0.12841757, 0.12841757)
+texture = ExtResource("5_svmwh")
+centered = false
+
+[node name="@CollisionPolygon2D@60" type="CollisionPolygon2D" parent="Platforms/1_r_basket" unique_id=1705272244]
+polygon = PackedVector2Array(-16, -40, 13, -48, 22, -42, 71, -45, 102, -39, 122, -31, 129, -31, 128, -10, 121, -4, 111, 43, 88, 55, 52, 58, 18, 52, 0, 42, -11, -3, -20, -12)
+
+[node name="1_kettle" type="StaticBody2D" parent="Platforms" unique_id=956964473]
+position = Vector2(-299, -906)
+scale = Vector2(0.60542816, 0.52986896)
+metadata/route = true
+metadata/kind = "brass_kettle"
+
+[node name="@Sprite2D@74" type="Sprite2D" parent="Platforms/1_kettle" unique_id=1285578666]
+position = Vector2(-55.35427, -7.5281806)
+scale = Vector2(0.08856683, 0.08856683)
+texture = ExtResource("6_ip2nr")
+centered = false
+
+[node name="@CollisionPolygon2D@75" type="CollisionPolygon2D" parent="Platforms/1_kettle" unique_id=355284766]
+scale = Vector2(1, 0.9879196)
+polygon = PackedVector2Array(-11, -1, 11, -5, 31, -1, 42, 10, 45, 19, 43, 45, 50, 53, 53, 73, 37, 95, 11, 101, -17, 96, -40, 69, -43, 60, -44, 42, -52, 35, -42, 30, -34, 36, -27, 52, -22, 43, -27, 20, -24, 9)
+
+[node name="1_kettle2" type="StaticBody2D" parent="Platforms" unique_id=2099221540]
+position = Vector2(-528, -1076)
+scale = Vector2(0.49260518, 0.41455147)
+metadata/route = true
+metadata/kind = "brass_kettle"
+
+[node name="_Sprite2D_74" type="Sprite2D" parent="Platforms/1_kettle2" unique_id=148229335]
+position = Vector2(-55.35427, -7.5281806)
+scale = Vector2(0.08856683, 0.08856683)
+texture = ExtResource("6_ip2nr")
+centered = false
+
+[node name="_CollisionPolygon2D_75" type="CollisionPolygon2D" parent="Platforms/1_kettle2" unique_id=1766509028]
+scale = Vector2(1, 0.9879196)
+polygon = PackedVector2Array(-11, -1, 11, -5, 31, -1, 42, 10, 45, 19, 43, 45, 50, 53, 53, 73, 37, 95, 11, 101, -17, 96, -40, 69, -43, 60, -44, 42, -52, 35, -42, 30, -34, 36, -27, 52, -22, 43, -27, 20, -24, 9)
+
+[node name="1_kettle2" type="StaticBody2D" parent="Platforms/1_kettle2" unique_id=1878649994]
+position = Vector2(-464.87537, -267.75922)
+scale = Vector2(1.0164566, 1.1275709)
+metadata/route = true
+metadata/kind = "brass_kettle"
+
+[node name="_Sprite2D_74" type="Sprite2D" parent="Platforms/1_kettle2/1_kettle2" unique_id=763587183]
+position = Vector2(-55.35427, -7.5281806)
+scale = Vector2(0.08856683, 0.08856683)
+texture = ExtResource("6_ip2nr")
+centered = false
+
+[node name="_CollisionPolygon2D_75" type="CollisionPolygon2D" parent="Platforms/1_kettle2/1_kettle2" unique_id=502208999]
+scale = Vector2(1, 0.9879196)
+polygon = PackedVector2Array(-11, -1, 11, -5, 31, -1, 42, 10, 45, 19, 43, 45, 50, 53, 53, 73, 37, 95, 11, 101, -17, 96, -40, 69, -43, 60, -44, 42, -52, 35, -42, 30, -34, 36, -27, 52, -22, 43, -27, 20, -24, 9)
+
+[node name="1_ceramic_pot" type="StaticBody2D" parent="Platforms" unique_id=213723453]
+position = Vector2(422, -478)
+metadata/route = false
+metadata/kind = "ceramic_pot"
+
+[node name="@Sprite2D@89" type="Sprite2D" parent="Platforms/1_ceramic_pot" unique_id=547094017]
+position = Vector2(-103.65226, -44.650204)
+scale = Vector2(0.15946501, 0.15946501)
+texture = ExtResource("7_6cddj")
+centered = false
+
+[node name="@CollisionPolygon2D@90" type="CollisionPolygon2D" parent="Platforms/1_ceramic_pot" unique_id=2001976614]
+polygon = PackedVector2Array(-28, -14, -14, -19, 2, -14, 7, 1, 47, 13, 69, 23, 88, 39, 94, 51, 94, 69, 85.578674, 82.09984, 76, 97, 32, 125, -14, 132, -62, 125, -77, 111, -91, 92, -94, 67, -82, 43, -95, 31, -93, 23, -55, 7, -34, 1)
+
+[node name="2_ceramic_pot2" type="StaticBody2D" parent="Platforms" unique_id=610556294]
+position = Vector2(-567, -1484)
+scale = Vector2(0.6459456, 0.8140161)
+metadata/route = true
+metadata/kind = "ceramic_pot"
+
+[node name="_Sprite2D_89" type="Sprite2D" parent="Platforms/2_ceramic_pot2" unique_id=1233927072]
+position = Vector2(-103.65226, -44.650204)
+scale = Vector2(0.15946501, 0.15946501)
+texture = ExtResource("7_6cddj")
+centered = false
+
+[node name="_CollisionPolygon2D_90" type="CollisionPolygon2D" parent="Platforms/2_ceramic_pot2" unique_id=28254602]
+polygon = PackedVector2Array(-28, -14, -14, -19, 2, -14, 7, 1, 47, 13, 69, 23, 88, 39, 94, 51, 94, 69, 85.578674, 82.09984, 76, 97, 32, 125, -14, 132, -62, 125, -77, 111, -91, 92, -94, 67, -82, 43, -95, 31, -93, 23, -55, 7, -34, 1)
+
+[node name="3_storage_box" type="StaticBody2D" parent="Platforms" unique_id=850190081]
+position = Vector2(-285, -1640)
+metadata/route = true
+metadata/kind = "storage_box"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/3_storage_box" unique_id=858451621]
+position = Vector2(0, 78)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("8_32vxr")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=994035347]
+polygon = PackedVector2Array(-27.160004, 19.900024, -27.160004, 19.76001, 75.04001, 35.30005, 75.04001, 35.43994)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=334570808]
+polygon = PackedVector2Array(84.14, 46.5, 84.84, 53.920044, 84.7, 53.920044)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=1351581313]
+polygon = PackedVector2Array(39.619995, 138.62, 25.200012, 139.88, 25.200012, 139.73999, 75.04001, 35.43994, 84.14, 46.079956, 84.14, 46.5)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=216549585]
+polygon = PackedVector2Array(-83.16, 60.21997, -83.01999, 53.5, -82.880005, 53.5, -77.41998, 65.95996, -77.56, 65.95996, -83.16, 60.920044)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=145900331]
+polygon = PackedVector2Array(81.2, 60.079956, 73.08, 106.97998, 72.94, 106.97998, 81.2, 58.95996)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=1307357349]
+polygon = PackedVector2Array(75.04001, 35.43994, 25.200012, 139.73999, -45.640015, 120.28003, -45.640015, 120.140015, -27.160004, 19.900024)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=1396588152]
+polygon = PackedVector2Array(-45.640015, 120.140015, -62.580017, 114.81995, -62.580017, 114.68005, -27.160004, 19.900024)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=1979353896]
+polygon = PackedVector2Array(-62.580017, 114.68005, -70, 108.23999, -70, 107.81995, -27.160004, 19.900024)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=2137086359]
+polygon = PackedVector2Array(-77.41998, 65.95996, -82.880005, 53.5, -72.23999, 42.30005, -71.95999, 42.30005)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=1006986037]
+polygon = PackedVector2Array(-77.41998, 65.95996, -71.95999, 42.30005, -27.160004, 19.900024, -70, 107.81995)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=990283385]
+polygon = PackedVector2Array(39.899994, 138.62, 39.619995, 138.62, 84.14, 46.5, 81.2, 58.95996)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=580170690]
+polygon = PackedVector2Array(84.14, 46.5, 84.7, 53.920044, 81.2, 58.95996)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/3_storage_box" unique_id=770431354]
+polygon = PackedVector2Array(72.94, 106.97998, 39.899994, 138.62, 81.2, 58.95996)
+
+[node name="4_floral_cushion" type="StaticBody2D" parent="Platforms" unique_id=99310938]
+position = Vector2(35, -1800)
+metadata/route = true
+metadata/kind = "floral_cushion"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/4_floral_cushion" unique_id=289399788]
+position = Vector2(0, 72)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("9_m1h4v")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=646171551]
+polygon = PackedVector2Array(80.78, 51.839966, 84.28, 57.71997, 84.14, 57.71997)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=1710612296]
+polygon = PackedVector2Array(-13.299999, 23, -13.299999, 22.859985, 67.62, 44.839966, 67.62, 44.97998)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=1543638839]
+polygon = PackedVector2Array(35.14, 132.90002, 14.700001, 129.54004, 14.700001, 129.40002, 77.7, 79.420044, 35.699997, 132.90002)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=1347631700]
+polygon = PackedVector2Array(-21.28, 115.119995, -66.64, 102.52002, -66.64, 102.380005, -27.3, 29.439941, -27.02, 29.439941, -20.44, 115.119995)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=2131826153]
+polygon = PackedVector2Array(84.14, 57.71997, 77.840004, 79.420044, 77.7, 79.420044)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=788516623]
+polygon = PackedVector2Array(-82.46, 88.099976, -79.1, 76.76001, -78.96, 76.76001, -66.64, 102.380005, -75.88, 97.619995, -82.46, 88.52002)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=1159016625]
+polygon = PackedVector2Array(-66.64, 102.380005, -75.88, 97.76001, -75.88, 97.619995)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=217911009]
+polygon = PackedVector2Array(-13.299999, 23, 67.62, 44.97998, 80.78, 51.69995, 80.78, 51.839966, -20.44, 115.119995, -27.02, 29.439941)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=448872661]
+polygon = PackedVector2Array(84.14, 57.71997, 77.7, 79.420044, 14.700001, 129.40002, -20.44, 115.119995, 80.78, 51.839966)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/4_floral_cushion" unique_id=328243963]
+polygon = PackedVector2Array(-78.96, 76.76001, -27.3, 29.439941, -66.64, 102.380005)
+
+[node name="5_wooden_door" type="StaticBody2D" parent="Platforms" unique_id=761374363]
+position = Vector2(310, -1960)
+metadata/route = true
+metadata/kind = "wooden_door"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/5_wooden_door" unique_id=1636365960]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("10_yppr7")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/5_wooden_door" unique_id=193926744]
+polygon = PackedVector2Array(33.600006, -3.6800537, 33.600006, -3.8199463, 40.04001, -1.3000488)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/5_wooden_door" unique_id=1672202051]
+polygon = PackedVector2Array(-39.899994, 159.42004, -40.04001, 3.880005, -39.899994, 3.880005)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/5_wooden_door" unique_id=1910025598]
+polygon = PackedVector2Array(-39.899994, 159.42004, -39.899994, 3.880005, 33.600006, -3.6800537, 40.04001, -1.3000488, 40.04001, 165.30005, 36.26001, 167.81995, 34.440002, 167.81995)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/5_wooden_door" unique_id=805972026]
+polygon = PackedVector2Array(-39.899994, 159.42004, 34.440002, 167.81995, -39.899994, 159.83997)
+
+[node name="6_blue_chair" type="StaticBody2D" parent="Platforms" unique_id=1384232424]
+position = Vector2(60, -2120)
+metadata/route = true
+metadata/kind = "blue_chair"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/6_blue_chair" unique_id=1347533051]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("11_rmj1o")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1159044761]
+polygon = PackedVector2Array(-21.419998, 4.7199707, -21.419998, 4.580078, 5.739998, 10.600098, 5.739998, 10.73999)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1575705260]
+polygon = PackedVector2Array(-58.24, 46.02002, -59.78, 28.800049, -59.64, 28.800049)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1111178175]
+polygon = PackedVector2Array(-41.3, 142.19995, -52.22, 142.90002, -52.22, 142.62, -38.22, 76.119995)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=954179425]
+polygon = PackedVector2Array(-41.16, 142.19995, -41.3, 142.19995, -38.22, 76.119995, -29.82, 95.71997)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=2144606795]
+polygon = PackedVector2Array(64.54, 54, 68.32001, 148.35999, 68.17999, 148.35999)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1927486950]
+polygon = PackedVector2Array(-4.200001, 112.23999, -7.84, 158.71997, -7.9799995, 158.71997, -24.36, 97.81995, -4.200001, 111.400024)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1503231389]
+polygon = PackedVector2Array(-38.22, 76.119995, -38.36, 76.119995, -40.88, 59.04004, -46.9, 11.300049)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=221576250]
+polygon = PackedVector2Array(19.599998, 104.26001, 15.400002, 132.40002, 15.260002, 132.40002, 3.7799988, 120.079956, 3.5, 105.80005, 19.599998, 104.119995)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=24844634]
+polygon = PackedVector2Array(30.099998, 40.41992, 64.54, 53.71997, 64.54, 54, 49.699997, 100.619995, 49.42, 100.619995)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1076102078]
+polygon = PackedVector2Array(-15.959999, 161.66003, -20.440002, 159.83997, -20.440002, 159.69995)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=36777003]
+polygon = PackedVector2Array(64.54, 54, 68.17999, 148.35999, 61.740005, 151.30005, 60.479996, 151.30005, 56.42, 148.78003, 56.42, 147.66003)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1081051943]
+polygon = PackedVector2Array(64.54, 54, 56.42, 147.66003, 49.699997, 100.619995)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1754673514]
+polygon = PackedVector2Array(29.82, 40.41992, 30.099998, 40.41992, 49.42, 100.619995, 19.599998, 104.119995, 3.5, 105.80005, 3.2200012, 105.80005)
+
+[node name="AlphaCollision13" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1825762415]
+polygon = PackedVector2Array(-41.02, 59.04004, -51.52, 54.69995, -51.52, 54.56006, -46.9, 11.300049, -40.88, 59.04004)
+
+[node name="AlphaCollision14" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1610765160]
+polygon = PackedVector2Array(-29.12, 95.71997, -29.82, 95.71997, -38.22, 76.119995, -46.9, 11.300049)
+
+[node name="AlphaCollision15" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=288025372]
+polygon = PackedVector2Array(-14.98, 161.66003, -15.959999, 161.66003, -20.440002, 159.69995, -24.36, 97.81995, -7.9799995, 158.71997)
+
+[node name="AlphaCollision16" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=399111118]
+polygon = PackedVector2Array(1.1199989, 106.079956, -4.200001, 111.400024, -24.36, 97.81995, 1.1199989, 105.93994)
+
+[node name="AlphaCollision17" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1422809210]
+polygon = PackedVector2Array(9.660004, 135.06006, 8.260002, 135.06006, 3.7799988, 132.54004, 3.7799988, 120.079956, 15.260002, 132.40002)
+
+[node name="AlphaCollision18" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=2042281774]
+polygon = PackedVector2Array(-21.419998, 4.7199707, 5.739998, 10.73999, 29.82, 40.41992, 3.2200012, 105.80005, 1.1199989, 105.93994, -24.36, 97.81995, -46.9, 11.300049)
+
+[node name="AlphaCollision19" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1899463554]
+polygon = PackedVector2Array(-46.9, 11.300049, -24.36, 97.81995, -24.5, 97.81995, -29.12, 95.71997)
+
+[node name="AlphaCollision20" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=1457269682]
+polygon = PackedVector2Array(-46.9, 11.300049, -51.52, 54.56006, -58.24, 46.43994, -58.24, 46.02002)
+
+[node name="AlphaCollision21" type="CollisionPolygon2D" parent="Platforms/6_blue_chair" unique_id=2086079730]
+polygon = PackedVector2Array(-46.9, 11.300049, -58.24, 46.02002, -59.64, 28.800049, -47.18, 11.300049)
+
+[node name="7_rocking_chair" type="StaticBody2D" parent="Platforms" unique_id=1496761841]
+position = Vector2(-250, -2280)
+metadata/route = true
+metadata/kind = "rocking_chair"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/7_rocking_chair" unique_id=1067654370]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("12_bl2hh")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1573335720]
+polygon = PackedVector2Array(70.14, 109.43994, 72.66, 113.5, 72.51999, 113.5)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1951507862]
+polygon = PackedVector2Array(-65.380005, 108.45996, -70.70001, 86.76001, -70.56, 86.76001, -65.23999, 108.45996)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=229327558]
+polygon = PackedVector2Array(24.64, 1.2199707, 24.64, 1.0800781, 55.86, 6.959961, 55.86, 7.1000977)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=197530991]
+polygon = PackedVector2Array(14.699997, 164.04004, -57.26001, 147.80005, -57.26001, 147.65991)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1487133334]
+polygon = PackedVector2Array(-70.56, 86.76001, -66.640015, 73.04004, -66.5, 73.04004, 14.699997, 164.04004, -65.23999, 108.45996)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=54352436]
+polygon = PackedVector2Array(61.600006, 70.80005, -15.820007, 61.840088, -1.6799927, 12.419922, -1.5399933, 12.419922, 68.880005, 24.73999)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=953369451]
+polygon = PackedVector2Array(69.86, 109.43994, 70.14, 109.43994, 72.51999, 113.5, 47.880005, 145.84009, 47.600006, 145.84009)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1796990866]
+polygon = PackedVector2Array(-58.940002, 131.56006, -59.080017, 131.56006, -66.640015, 115.04004)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=454712397]
+polygon = PackedVector2Array(62.58, 70.80005, 68.73999, 75.28003, 68.73999, 75.56006, 61.600006, 70.80005)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1403537091]
+polygon = PackedVector2Array(55.86, 7.1000977, 64.82001, 14.52002, 64.82001, 14.800049)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1077136037]
+polygon = PackedVector2Array(14.699997, 164.04004, -57.26001, 147.65991, -61.179993, 143.73999, -61.179993, 141.08008, -58.940002, 131.56006)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1334333421]
+polygon = PackedVector2Array(-66.5, 73.04004, -55.01999, 62.95996, -54.600006, 62.95996, 14.699997, 164.04004)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=737116091]
+polygon = PackedVector2Array(14.699997, 164.04004, -58.940002, 131.56006, -66.640015, 115.04004, -66.640015, 114.34009, -65.23999, 108.45996)
+
+[node name="AlphaCollision13" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=1654769743]
+polygon = PackedVector2Array(15.119995, 164.04004, 14.699997, 164.04004, -54.600006, 62.95996, -34.859985, 58.620117, -29.540009, 58.620117, -15.820007, 61.97998, 30.520004, 158.15991)
+
+[node name="AlphaCollision14" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=278291449]
+polygon = PackedVector2Array(68.73999, 75.56006, 72.51999, 84.65991, 72.51999, 85.36011, 69.86, 109.43994, 47.600006, 145.84009, 30.800003, 158.15991, 30.520004, 158.15991, -15.820007, 61.97998, -15.820007, 61.840088, 61.600006, 70.80005)
+
+[node name="AlphaCollision15" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=833600137]
+polygon = PackedVector2Array(-1.5399933, 12.419922, 8.679993, 4.4399414, 9.100006, 4.4399414, 68.880005, 24.73999)
+
+[node name="AlphaCollision16" type="CollisionPolygon2D" parent="Platforms/7_rocking_chair" unique_id=307132053]
+polygon = PackedVector2Array(68.880005, 24.73999, 9.100006, 4.4399414, 24.64, 1.2199707, 55.86, 7.1000977, 64.82001, 14.800049, 68.880005, 23.76001)
+
+[node name="8_tall_planter" type="StaticBody2D" parent="Platforms" unique_id=604306245]
+position = Vector2(-455, -2440)
+metadata/route = true
+metadata/kind = "tall_planter"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/8_tall_planter" unique_id=789201962]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("13_ssjbp")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/8_tall_planter" unique_id=199379712]
+polygon = PackedVector2Array(-53.619995, 58.06006, -44.100006, 29.21997, -38.920013, 17.320068, -5.1799927, 3.8798828, 2.9400024, 5.699951, 15.820007, 9.76001, 41.859985, 28.939941, 48.160004, 37.620117, 52.920013, 60.159912, 53.200012, 68.97998, 46.339996, 97.3999, 26.179993, 152.97998, 15.540009, 157.32007, -3.9200134, 158.43994, -23.380005, 152.84009, -43.54001, 98.93994, -53.619995, 58.06006)
+
+[node name="9_herb_planter" type="StaticBody2D" parent="Platforms" unique_id=274390419]
+position = Vector2(-155, -2600)
+metadata/route = true
+metadata/kind = "herb_planter"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/9_herb_planter" unique_id=1776198071]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("14_53w16")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=154719595]
+polygon = PackedVector2Array(84.7, 74.58008, 82.88, 77.93994, 82.88, 77.80005)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=303368162]
+polygon = PackedVector2Array(-35.28, 31.04004, -27.440002, 25.300049, -27.440002, 25.439941, -29.399994, 35.80005, -35.28, 31.179932)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1330157777]
+polygon = PackedVector2Array(-38.22, 51.899902, -64.119995, 65.76001, -64.119995, 65.47998)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=654552441]
+polygon = PackedVector2Array(-0.69999695, 6.26001, -0.69999695, 6.120117, 13.440002, 13.26001, 3.7799988, 18.159912)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1579695951]
+polygon = PackedVector2Array(81.76, 65.34009, 84.840004, 74.58008, 84.7, 74.58008, 63.14, 65.34009)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1103491167]
+polygon = PackedVector2Array(-58.520004, 83.67993, -82.04001, 90.82007, -82.04001, 90.67993)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=429139685]
+polygon = PackedVector2Array(26.179993, 41.82007, 31.220001, 40.41992, 31.220001, 40.56006)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=496084355]
+polygon = PackedVector2Array(-55.300003, 44.899902, -44.100006, 41.82007, -44.100006, 41.95996)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=2142179507]
+polygon = PackedVector2Array(-15.820007, 15.080078, -4.199997, 12.699951, -4.199997, 12.840088, -5.880005, 30.340088)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1178191418]
+polygon = PackedVector2Array(37.940002, 45.600098, 45.78, 44.19995, 45.78, 44.340088)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1154060656]
+polygon = PackedVector2Array(13.580002, 13.26001, 24.220001, 11.439941, 24.220001, 11.860107, 11.7599945, 25.580078)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1530342899]
+polygon = PackedVector2Array(8.679993, 21.939941, 13.440002, 13.26001, 13.580002, 13.26001, 11.7599945, 25.580078, 8.539993, 28.379883)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=817519762]
+polygon = PackedVector2Array(61.6, 48.82007, 75.6, 47.41992, 75.6, 47.56006, 62.58, 57.21997)
+
+[node name="AlphaCollision13" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=139218418]
+polygon = PackedVector2Array(64.82, 57.360107, 70.56, 57.08008, 70.56, 57.21997, 70.28, 60.30005, 63.14, 65.34009)
+
+[node name="AlphaCollision14" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=473174162]
+polygon = PackedVector2Array(84.7, 74.58008, 82.88, 77.80005, 63.14, 65.34009)
+
+[node name="AlphaCollision15" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=2002381523]
+polygon = PackedVector2Array(-82.04001, 90.67993, -82.17999, 85.63989, -82.04001, 85.63989)
+
+[node name="AlphaCollision16" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1571601288]
+polygon = PackedVector2Array(-58.520004, 83.67993, -82.04001, 90.67993, -82.04001, 85.63989, -72.8, 71.91992, -72.51999, 71.91992, -58.520004, 83.54004)
+
+[node name="AlphaCollision17" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1010545867]
+polygon = PackedVector2Array(-55.020004, 85.63989, -58.520004, 83.54004, -72.51999, 71.91992, -63.699997, 68.13989, -63.559998, 68.13989, -54.179993, 70.80005, -52.64, 85.63989)
+
+[node name="AlphaCollision18" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1031751965]
+polygon = PackedVector2Array(-64.119995, 65.47998, -64.26001, 56.23999, -64.119995, 56.23999)
+
+[node name="AlphaCollision19" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1254168743]
+polygon = PackedVector2Array(-38.22, 51.899902, -64.119995, 65.47998, -64.119995, 56.23999, -55.58, 44.899902, -55.300003, 44.899902)
+
+[node name="AlphaCollision20" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=948647870]
+polygon = PackedVector2Array(-38.22, 51.899902, -55.300003, 44.899902, -44.100006, 41.95996, -38.22, 51.76001)
+
+[node name="AlphaCollision21" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1851433806]
+polygon = PackedVector2Array(-38.22, 51.76001, -44.100006, 41.95996, -33.740005, 50.08008, -33.880005, 53.860107)
+
+[node name="AlphaCollision22" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=853964630]
+polygon = PackedVector2Array(3.9199982, 30.340088, -5.880005, 30.47998, -5.880005, 30.340088, -4.199997, 12.840088, 4.899994, 19.840088, 4.899994, 20.120117)
+
+[node name="AlphaCollision23" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=93247530]
+polygon = PackedVector2Array(73.5, 60.30005, 81.76, 65.06006, 81.76, 65.34009, 63.14, 65.34009, 70.28, 60.30005)
+
+[node name="AlphaCollision24" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1623502561]
+polygon = PackedVector2Array(58.800003, 64.21997, 64.54, 57.360107, 64.82, 57.360107, 63.14, 65.34009, 63, 65.34009)
+
+[node name="AlphaCollision25" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1957201608]
+polygon = PackedVector2Array(58.800003, 64.21997, 63, 65.34009, 56, 70.23999, 58.660004, 64.21997)
+
+[node name="AlphaCollision26" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=762519431]
+polygon = PackedVector2Array(72.38, 89.69995, 72.38, 102.02002, 72.24, 102.02002, 53.9, 94.32007)
+
+[node name="AlphaCollision27" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=347725224]
+polygon = PackedVector2Array(53.9, 94.73999, 53.9, 101.87988, 53.760002, 101.87988)
+
+[node name="AlphaCollision28" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=987996974]
+polygon = PackedVector2Array(56, 70.52002, 61.6, 70.80005, 61.6, 70.93994)
+
+[node name="AlphaCollision29" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1690653198]
+polygon = PackedVector2Array(61.46, 48.82007, 61.6, 48.82007, 62.58, 57.21997)
+
+[node name="AlphaCollision30" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1839526449]
+polygon = PackedVector2Array(39.059998, 25.300049, 44.520004, 35.93994, 44.520004, 36.639893, 43.54, 43.78003, 43.4, 43.78003, 29.400002, 37.19995, 25.899994, 18.02002)
+
+[node name="AlphaCollision31" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1303267338]
+polygon = PackedVector2Array(-2.6600037, 161.52002, -32.339996, 155.78003, -32.339996, 155.6399)
+
+[node name="AlphaCollision32" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1012252132]
+polygon = PackedVector2Array(-7.699997, 31.179932, 0.13999939, 32.860107, 0.13999939, 33)
+
+[node name="AlphaCollision33" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=28196381]
+polygon = PackedVector2Array(-52.64, 85.63989, -54.179993, 70.80005, -54.179993, 70.52002, -47.04001, 60.58008, -33.880005, 54, 67.340004, 77.37988, 72.38, 88.71997, 72.38, 89.69995, 53.9, 94.32007, -48.72, 92.63989)
+
+[node name="AlphaCollision34" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=31965832]
+polygon = PackedVector2Array(45.78, 114.8999, 33.6, 155.6399, 33.32, 155.6399)
+
+[node name="AlphaCollision35" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=469718040]
+polygon = PackedVector2Array(-40.320007, 39.43994, -50.54001, 35.80005, -50.54001, 35.379883, -48.020004, 32.71997, -47.740005, 32.71997)
+
+[node name="AlphaCollision36" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=35211699]
+polygon = PackedVector2Array(-39.199997, 39.43994, -40.320007, 39.43994, -47.740005, 32.71997, -35.28, 31.179932, -29.399994, 35.80005)
+
+[node name="AlphaCollision37" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=2055567777]
+polygon = PackedVector2Array(67.340004, 77.1001, -33.740005, 49.80005, -39.199997, 39.43994, -29.399994, 35.80005, -29.119995, 35.80005, -23.660004, 37.06006, 56, 70.52002)
+
+[node name="AlphaCollision38" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=650298549]
+polygon = PackedVector2Array(56, 70.52002, -23.660004, 37.06006, -23.660004, 36.91992, -9.380005, 31.179932, -7.699997, 31.179932, 0.69999695, 36.08008)
+
+[node name="AlphaCollision39" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=581717049]
+polygon = PackedVector2Array(-7.699997, 31.179932, 0.13999939, 33, 0.69999695, 36.08008)
+
+[node name="AlphaCollision40" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=313859095]
+polygon = PackedVector2Array(-5.880005, 30.340088, -22.259995, 22.21997, -22.259995, 21.23999, -16.240005, 15.080078, -15.820007, 15.080078)
+
+[node name="AlphaCollision41" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=833571526]
+polygon = PackedVector2Array(3.9199982, 30.340088, 4.899994, 20.120117, 8.539993, 29.080078, 4.4799957, 30.340088)
+
+[node name="AlphaCollision42" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=587954542]
+polygon = PackedVector2Array(6.300003, 34.67993, 4.4799957, 30.340088, 8.539993, 29.080078, 23.660004, 39.860107)
+
+[node name="AlphaCollision43" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=759369465]
+polygon = PackedVector2Array(1.9600067, 161.52002, -2.6600037, 161.52002, -32.339996, 155.6399, -43.820007, 114.47998, 45.78, 114.19995, 45.78, 114.8999, 33.32, 155.6399)
+
+[node name="AlphaCollision44" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=2080846460]
+polygon = PackedVector2Array(8.539993, 21.939941, 3.7799988, 18.439941, 3.7799988, 18.159912, 13.440002, 13.26001, 8.679993, 21.939941)
+
+[node name="AlphaCollision45" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1495065701]
+polygon = PackedVector2Array(25.899994, 18.02002, 39.059998, 25.02002, 39.059998, 25.300049)
+
+[node name="AlphaCollision46" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1476223146]
+polygon = PackedVector2Array(24.64, 18.02002, 25.899994, 18.02002, 29.400002, 37.19995, 29.260002, 37.19995, 11.899994, 25.580078)
+
+[node name="AlphaCollision47" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=669444290]
+polygon = PackedVector2Array(8.539993, 28.379883, 11.7599945, 25.580078, 11.899994, 25.580078, 29.260002, 37.19995, 23.660004, 39.860107, 8.539993, 29.080078)
+
+[node name="AlphaCollision48" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1002336695]
+polygon = PackedVector2Array(52.92, 39.71997, 60.339996, 44.06006, 60.339996, 44.340088)
+
+[node name="AlphaCollision49" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1106149045]
+polygon = PackedVector2Array(-49, 92.63989, -56.699997, 97.95996, -57.26001, 97.95996, -59.22, 94.73999, -59.22, 94.17993, -52.64, 85.63989)
+
+[node name="AlphaCollision50" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=554260097]
+polygon = PackedVector2Array(-48.72, 92.63989, -49, 92.63989, -52.64, 85.63989)
+
+[node name="AlphaCollision51" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1026263721]
+polygon = PackedVector2Array(-54.179993, 70.52002, -47.320007, 60.58008, -47.04001, 60.58008)
+
+[node name="AlphaCollision52" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1554493859]
+polygon = PackedVector2Array(56, 70.52002, 26.179993, 41.82007, 31.220001, 40.56006, 37.660004, 45.600098, 56, 70.23999)
+
+[node name="AlphaCollision53" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1896596254]
+polygon = PackedVector2Array(6.300003, 34.82007, 6.300003, 34.67993, 23.660004, 39.860107, 23.660004, 40)
+
+[node name="AlphaCollision54" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1113476295]
+polygon = PackedVector2Array(53.9, 94.32007, 53.9, 94.73999, 53.760002, 101.87988, 45.78, 114.19995, -43.820007, 114.47998, -43.95999, 114.47998, -48.020004, 110, -48.020004, 109.43994)
+
+[node name="AlphaCollision55" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=951751876]
+polygon = PackedVector2Array(53.9, 94.32007, -48.020004, 109.43994, -48.72, 92.63989)
+
+[node name="AlphaCollision56" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=697104669]
+polygon = PackedVector2Array(67.340004, 77.1001, 67.340004, 77.37988, -33.880005, 54, -33.880005, 53.860107, -33.740005, 50.08008)
+
+[node name="AlphaCollision57" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=2096267303]
+polygon = PackedVector2Array(67.340004, 77.1001, -33.740005, 50.08008, -33.740005, 49.80005)
+
+[node name="AlphaCollision58" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=732267105]
+polygon = PackedVector2Array(52.92, 39.71997, 60.339996, 44.340088, 61.46, 48.82007, 53.199997, 47.56006)
+
+[node name="AlphaCollision59" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=670349965]
+polygon = PackedVector2Array(56, 70.52002, 61.6, 70.93994, 67.340004, 77.1001)
+
+[node name="AlphaCollision60" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1090545037]
+polygon = PackedVector2Array(56, 70.52002, 0.69999695, 36.08008, 0.9799957, 36.08008)
+
+[node name="AlphaCollision61" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=33427731]
+polygon = PackedVector2Array(56, 70.52002, 0.9799957, 36.08008, 6.300003, 34.82007, 23.660004, 40, 26.040009, 41.82007)
+
+[node name="AlphaCollision62" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=923616852]
+polygon = PackedVector2Array(56, 70.52002, 26.040009, 41.82007, 26.179993, 41.82007)
+
+[node name="AlphaCollision63" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=165905112]
+polygon = PackedVector2Array(56, 70.23999, 37.660004, 45.600098, 37.940002, 45.600098, 58.660004, 64.21997)
+
+[node name="AlphaCollision64" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=95533491]
+polygon = PackedVector2Array(62.58, 57.360107, 58.660004, 64.21997, 37.940002, 45.600098, 45.78, 44.340088, 53.199997, 47.840088, 62.58, 57.21997)
+
+[node name="AlphaCollision65" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1033578847]
+polygon = PackedVector2Array(61.46, 48.82007, 62.58, 57.21997, 53.199997, 47.840088, 53.199997, 47.56006)
+
+[node name="AlphaCollision66" type="CollisionPolygon2D" parent="Platforms/9_herb_planter" unique_id=1790570295]
+polygon = PackedVector2Array(52.92, 39.71997, 53.199997, 47.56006, 52.92, 39.58008)
+
+[node name="10_flower_planter" type="StaticBody2D" parent="Platforms" unique_id=890247911]
+position = Vector2(175, -2760)
+metadata/route = true
+metadata/kind = "flower_planter"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/10_flower_planter" unique_id=1574038164]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("15_1k2js")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=543403803]
+polygon = PackedVector2Array(15.119995, 12.139893, 15.119995, 12, 23.520004, 16.620117)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=400164559]
+polygon = PackedVector2Array(-42.699997, 88.86011, -47.04, 90.3999, -47.04, 90.26001, -46.339996, 82.97998)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1563788006]
+polygon = PackedVector2Array(14, 29.080078, 9.800003, 30.47998, 7.9799957, 19.28003, 8.119995, 19.28003, 24.220001, 22.21997)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=2007983281]
+polygon = PackedVector2Array(23.520004, 17.04004, 24.36, 22.21997, 24.220001, 22.21997, 8.119995, 19.28003)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1014806398]
+polygon = PackedVector2Array(32.899994, 49.93994, 53.059998, 47, 53.059998, 47.139893)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1672714449]
+polygon = PackedVector2Array(23.520004, 147.65991, -5.600006, 151.15991, -5.600006, 151.02002)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=906290177]
+polygon = PackedVector2Array(-56.14, 63.52002, -56.979996, 52.600098, -56.839996, 52.600098, -45.92, 65.19995)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1917283926]
+polygon = PackedVector2Array(46.479996, 32.58008, 47.04001, 40.97998, 46.899994, 40.97998)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=320737276]
+polygon = PackedVector2Array(33.740005, 28.100098, 40.320007, 27.679932, 40.320007, 27.820068, 29.399994, 36.08008)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1357597991]
+polygon = PackedVector2Array(-11.899994, 40.41992, -12.320007, 40.41992, -25.199997, 39.43994, -25.199997, 39.30005, -7.1399994, 32.159912, -3.9199982, 35.100098, -3.9199982, 36.08008, -7.699997, 39.58008)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1072722835]
+polygon = PackedVector2Array(55.72, 82.28003, 54.740005, 91.52002, 54.600006, 91.52002)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1727753861]
+polygon = PackedVector2Array(-11.619995, 12.419922, -4.3399963, 13.26001, -4.3399963, 13.399902)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=549719741]
+polygon = PackedVector2Array(-45.92, 65.19995, -56.14, 63.80005, -56.14, 63.52002)
+
+[node name="AlphaCollision13" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=608812042]
+polygon = PackedVector2Array(-50.259995, 43.639893, -39.199997, 38.04004, -36.259995, 38.04004, -29.820007, 39.30005, -29.820007, 39.43994, -45.5, 65.19995, -45.92, 65.19995)
+
+[node name="AlphaCollision14" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=5866916]
+polygon = PackedVector2Array(-45.92, 65.19995, -56.839996, 52.600098, -50.54, 43.639893, -50.259995, 43.639893)
+
+[node name="AlphaCollision15" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=2054425351]
+polygon = PackedVector2Array(-42.699997, 69.82007, -45.5, 65.19995, -29.820007, 39.43994, -28.559998, 43.360107, -42.559998, 69.82007)
+
+[node name="AlphaCollision16" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1734480012]
+polygon = PackedVector2Array(55.72, 82.28003, 54.600006, 91.52002, 44.240005, 93.06006, -42.42, 88.86011, 49.559998, 77.37988, 55.72, 81.86011)
+
+[node name="AlphaCollision17" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1557292640]
+polygon = PackedVector2Array(-5.600006, 151.02002, -24.64, 145.69995, -24.64, 145.41992)
+
+[node name="AlphaCollision18" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1651776501]
+polygon = PackedVector2Array(8.119995, 19.28003, 15.119995, 12.139893, 23.520004, 16.620117, 23.520004, 17.04004)
+
+[node name="AlphaCollision19" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=580396709]
+polygon = PackedVector2Array(9.800003, 30.47998, 14, 29.080078, 14, 29.5, 11.7599945, 37.899902, 9.800003, 30.76001)
+
+[node name="AlphaCollision20" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=845313606]
+polygon = PackedVector2Array(-5.3200073, 45.879883, 3.0800018, 30.899902, 9.800003, 30.76001, 11.7599945, 37.899902, -5.3200073, 46.02002)
+
+[node name="AlphaCollision21" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=995450953]
+polygon = PackedVector2Array(44.240005, 94.17993, 31.36, 136.6001, 31.220001, 136.6001, -41.440002, 104.26001, -41.440002, 103.69995)
+
+[node name="AlphaCollision22" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1076751671]
+polygon = PackedVector2Array(29.399994, 36.08008, 46.479996, 32.58008, 46.899994, 40.97998, 34.86, 45.45996, 29.399994, 36.91992)
+
+[node name="AlphaCollision23" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=381890027]
+polygon = PackedVector2Array(49.559998, 77.23999, 32.899994, 49.93994, 53.059998, 47.139893, 58.100006, 57.08008, 64.26001, 70.52002)
+
+[node name="AlphaCollision24" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1046489541]
+polygon = PackedVector2Array(18.339996, 33.41992, 20.580002, 33.41992, 21.699997, 36.639893, 11.899994, 37.899902)
+
+[node name="AlphaCollision25" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=697235643]
+polygon = PackedVector2Array(-12.7400055, 12.419922, -11.619995, 12.419922, -4.3399963, 13.399902, -2.6600037, 21.379883, -7.1399994, 32.02002, -27.300003, 21.23999)
+
+[node name="AlphaCollision26" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=2123593549]
+polygon = PackedVector2Array(-48.300003, 82.97998, -56.839996, 79.62012, -56.839996, 78.5, -51.800003, 72.76001, -51.520004, 72.76001)
+
+[node name="AlphaCollision27" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1515616834]
+polygon = PackedVector2Array(-46.339996, 82.97998, -48.300003, 82.97998, -51.520004, 72.76001, -42.559998, 69.82007, 49.559998, 77.23999)
+
+[node name="AlphaCollision28" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1574912784]
+polygon = PackedVector2Array(3.2200012, 24.45996, 0, 31.600098, -0.27999878, 31.600098, -1.2599945, 21.379883, 3.2200012, 23.620117)
+
+[node name="AlphaCollision29" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=329520708]
+polygon = PackedVector2Array(67.34, 64.5, 64.54001, 70.52002, 64.26001, 70.52002, 58.100006, 57.08008, 60.479996, 57.08008, 67.34, 62.67993)
+
+[node name="AlphaCollision30" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1914464530]
+polygon = PackedVector2Array(-1.2599945, 21.379883, -0.27999878, 31.600098, -7.1399994, 32.02002, -2.6600037, 21.379883)
+
+[node name="AlphaCollision31" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=872700648]
+polygon = PackedVector2Array(29.399994, 36.08008, 33.45999, 28.100098, 33.740005, 28.100098)
+
+[node name="AlphaCollision32" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=622840993]
+polygon = PackedVector2Array(-42.559998, 69.82007, -28.559998, 43.360107, -28.419998, 43.360107, -10.220001, 45.879883, 49.559998, 77.23999)
+
+[node name="AlphaCollision33" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1804818983]
+polygon = PackedVector2Array(-33.45999, 31.45996, -33.45999, 29.919922, -27.580002, 21.23999, -27.300003, 21.23999, -7.1399994, 32.02002, -7.1399994, 32.159912, -25.199997, 39.30005)
+
+[node name="AlphaCollision34" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1218625847]
+polygon = PackedVector2Array(-5.3200073, 45.879883, 2.800003, 30.899902, 3.0800018, 30.899902)
+
+[node name="AlphaCollision35" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1600854082]
+polygon = PackedVector2Array(29.399994, 36.08008, 40.320007, 27.820068, 46.479996, 32.30005, 46.479996, 32.58008)
+
+[node name="AlphaCollision36" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1657065233]
+polygon = PackedVector2Array(-42.42, 88.86011, -42.699997, 88.86011, -46.339996, 82.97998, 49.559998, 77.23999, 49.559998, 77.37988)
+
+[node name="AlphaCollision37" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=147607530]
+polygon = PackedVector2Array(31.220001, 136.6001, 23.800003, 147.65991, 23.520004, 147.65991, -41.440002, 104.26001)
+
+[node name="AlphaCollision38" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=207450650]
+polygon = PackedVector2Array(-11.899994, 40.41992, -7.699997, 39.58008, -7.699997, 39.860107, -10.220001, 45.32007)
+
+[node name="AlphaCollision39" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=936689250]
+polygon = PackedVector2Array(-10.220001, 45.32007, -7.699997, 39.860107, -5.3200073, 46.02002, -10.220001, 45.879883)
+
+[node name="AlphaCollision40" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1321514594]
+polygon = PackedVector2Array(21.699997, 36.639893, 21.979996, 36.639893, 29.399994, 36.91992, 34.86, 45.45996, 34.86, 45.73999, 32.199997, 49.93994, 11.899994, 37.899902)
+
+[node name="AlphaCollision41" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=1036947383]
+polygon = PackedVector2Array(-5.600006, 151.02002, -24.64, 145.41992, -41.440002, 104.26001, 23.520004, 147.65991)
+
+[node name="AlphaCollision42" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=118045758]
+polygon = PackedVector2Array(44.240005, 94.17993, -41.440002, 103.69995, -42.42, 88.86011, 44.240005, 93.06006)
+
+[node name="AlphaCollision43" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=517490703]
+polygon = PackedVector2Array(49.559998, 77.23999, -10.220001, 45.879883, -5.3200073, 46.02002)
+
+[node name="AlphaCollision44" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=2095256350]
+polygon = PackedVector2Array(49.559998, 77.23999, -5.3200073, 46.02002, 11.7599945, 37.899902, 11.899994, 37.899902, 32.199997, 49.93994)
+
+[node name="AlphaCollision45" type="CollisionPolygon2D" parent="Platforms/10_flower_planter" unique_id=2038363022]
+polygon = PackedVector2Array(49.559998, 77.23999, 32.199997, 49.93994, 32.899994, 49.93994)
+
+[node name="11_broad_planter" type="StaticBody2D" parent="Platforms" unique_id=1303705354]
+position = Vector2(440, -2920)
+metadata/route = true
+metadata/kind = "broad_planter"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/11_broad_planter" unique_id=1912132642]
+position = Vector2(0, 82)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("16_74tt5")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1009046154]
+polygon = PackedVector2Array(70.70001, 88.15991, 67.899994, 91.52002, 67.899994, 91.37988)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=627393239]
+polygon = PackedVector2Array(21.559998, 6.959961, 21.559998, 6.8200684, 28.980011, 9.76001, 28.980011, 10.040039)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=950682249]
+polygon = PackedVector2Array(-53.48001, 68.84009, -67.76001, 74.02002, -67.76001, 73.87988)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1879516649]
+polygon = PackedVector2Array(-26.73999, 30.620117, -31.779999, 16.47998, -31.5, 16.47998)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1054613721]
+polygon = PackedVector2Array(-67.76001, 73.87988, -69.29999, 68.97998, -69.16, 68.97998)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1314248189]
+polygon = PackedVector2Array(-47.04001, 84.65991, -59.920013, 88.58008, -59.920013, 86.19995, -50.54001, 70.93994)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=65509500]
+polygon = PackedVector2Array(-31.5, 16.47998, -17.5, 12.280029, -17.5, 12.419922, -26.73999, 30.620117)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=360920986]
+polygon = PackedVector2Array(65.66, 52.17993, 67.20001, 63.659912, 65.66, 63.659912, 50.679993, 56.80005)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1505294230]
+polygon = PackedVector2Array(-46.619995, 103.56006, -47.880005, 94.04004, -47.73999, 94.04004)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=707008770]
+polygon = PackedVector2Array(-53.48001, 68.69995, -53.48001, 68.84009, -67.76001, 73.87988, -69.16, 68.97998, -63.420013, 56.379883, -63.140015, 56.379883)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=2116280210]
+polygon = PackedVector2Array(-50.54001, 70.93994, -50.679993, 70.93994, -53.48001, 68.69995, -63.140015, 56.379883, -48.72, 49.80005, 30.23999, 38.45996)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1424372922]
+polygon = PackedVector2Array(16.519989, 156.06006, -2.7999878, 157.17993, -2.7999878, 157.04004, 43.820007, 108.87988)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=2088291606]
+polygon = PackedVector2Array(-52.78, 48.95996, -52.78, 45.04004, -52.640015, 45.04004, -48.72, 49.659912)
+
+[node name="AlphaCollision13" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1057668961]
+polygon = PackedVector2Array(-48.72, 49.659912, -52.78, 49.23999, -52.78, 48.95996)
+
+[node name="AlphaCollision14" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=472817935]
+polygon = PackedVector2Array(30.380005, 38.45996, 57.399994, 42.52002, 57.399994, 42.659912, 50.679993, 56.80005, 50.54001, 56.80005)
+
+[node name="AlphaCollision15" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=958384505]
+polygon = PackedVector2Array(-17.5, 12.419922, -6.720001, 14.23999, -6.720001, 14.379883, -26.73999, 30.620117)
+
+[node name="AlphaCollision16" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=405715209]
+polygon = PackedVector2Array(49.140015, 95.43994, 47.600006, 104.54004, 47.45999, 104.54004, 45.78, 90.26001, 49.140015, 94.32007)
+
+[node name="AlphaCollision17" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1678362616]
+polygon = PackedVector2Array(-2.7999878, 157.04004, -31.5, 151.02002, -31.5, 150.87988)
+
+[node name="AlphaCollision18" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1063233881]
+polygon = PackedVector2Array(-48.72, 49.659912, -52.640015, 45.04004, -44.51999, 33.69995, -44.23999, 33.69995)
+
+[node name="AlphaCollision19" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1426900782]
+polygon = PackedVector2Array(70.70001, 85.36011, 70.70001, 88.15991, 67.899994, 91.37988, 54.04001, 84.37988, 62.72, 67.30005)
+
+[node name="AlphaCollision20" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1232548330]
+polygon = PackedVector2Array(-46.899994, 84.65991, -47.04001, 84.65991, -50.54001, 70.93994, 30.23999, 38.45996)
+
+[node name="AlphaCollision21" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1588072976]
+polygon = PackedVector2Array(43.820007, 108.87988, 31.920013, 151.30005, 31.640015, 151.30005)
+
+[node name="AlphaCollision22" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=2126174673]
+polygon = PackedVector2Array(-26.73999, 30.620117, -6.720001, 14.379883, -0.55999756, 20.820068, -26.73999, 30.76001)
+
+[node name="AlphaCollision23" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1584575033]
+polygon = PackedVector2Array(65.66, 51.899902, 65.66, 52.17993, 50.679993, 56.80005, 57.399994, 42.659912)
+
+[node name="AlphaCollision24" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1773980481]
+polygon = PackedVector2Array(-46.899994, 84.65991, 30.23999, 38.45996, 30.380005, 38.45996, 50.54001, 56.80005, 49.28, 58.76001, -43.95999, 89.84009, -44.100006, 89.84009)
+
+[node name="AlphaCollision25" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=783332513]
+polygon = PackedVector2Array(32.200012, 22.639893, 40.880005, 26.139893, 40.880005, 26.28003, 39.200012, 36.91992, 37.660004, 36.91992, 30.100006, 35.80005, 30.100006, 22.639893)
+
+[node name="AlphaCollision26" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=2068543233]
+polygon = PackedVector2Array(46.48001, 33.139893, 46.48001, 33.69995, 39.200012, 36.91992, 40.880005, 26.28003)
+
+[node name="AlphaCollision27" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1349892853]
+polygon = PackedVector2Array(-48.72, 49.80005, -48.72, 49.659912, -44.23999, 33.69995, -26.73999, 30.76001, 30.23999, 38.45996)
+
+[node name="AlphaCollision28" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=654019358]
+polygon = PackedVector2Array(43.820007, 108.87988, -2.7999878, 157.04004, -31.5, 150.87988, -42.700012, 108.17993, 43.820007, 108.04004)
+
+[node name="AlphaCollision29" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1134567652]
+polygon = PackedVector2Array(62.72, 67.30005, 54.04001, 84.37988, 53.899994, 84.37988, 49.559998, 58.76001, 62.72, 67.02002)
+
+[node name="AlphaCollision30" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1020541753]
+polygon = PackedVector2Array(-0.55999756, 20.399902, 7.1400146, 9.899902, 21.559998, 6.959961, 28.980011, 10.040039, 30.100006, 22.639893, 30.100006, 35.80005, -0.55999756, 20.820068)
+
+[node name="AlphaCollision31" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1074521294]
+polygon = PackedVector2Array(49.28, 58.76001, 49.559998, 58.76001, 53.899994, 84.37988, 48.299988, 85.5, -43.95999, 89.84009)
+
+[node name="AlphaCollision32" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1401581753]
+polygon = PackedVector2Array(43.820007, 108.87988, 31.640015, 151.30005, 17.5, 156.06006, 16.519989, 156.06006)
+
+[node name="AlphaCollision33" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=502816816]
+polygon = PackedVector2Array(-0.55999756, 20.399902, 6.8599854, 9.899902, 7.1400146, 9.899902)
+
+[node name="AlphaCollision34" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=859473757]
+polygon = PackedVector2Array(-0.55999756, 20.820068, 30.100006, 35.80005, 30.100006, 35.93994)
+
+[node name="AlphaCollision35" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1239805917]
+polygon = PackedVector2Array(-0.55999756, 20.820068, 30.100006, 35.93994, 30.23999, 38.45996, -26.73999, 30.76001)
+
+[node name="AlphaCollision36" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1076878761]
+polygon = PackedVector2Array(45.78, 90.26001, -46.619995, 103.56006, -47.73999, 94.04004, -43.95999, 89.84009, 45.78, 90.12012)
+
+[node name="AlphaCollision37" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=1913468590]
+polygon = PackedVector2Array(-43.95999, 89.84009, 48.299988, 85.5, 48.299988, 86.06006, 45.78, 90.12012)
+
+[node name="AlphaCollision38" type="CollisionPolygon2D" parent="Platforms/11_broad_planter" unique_id=233148061]
+polygon = PackedVector2Array(43.820007, 108.04004, -42.700012, 108.17993, -42.839996, 108.17993, -46.619995, 104.26001, -46.619995, 103.56006, 45.78, 90.26001, 47.45999, 104.54004)
+
+[node name="12_candy_tin" type="StaticBody2D" parent="Platforms" unique_id=519565826]
+position = Vector2(135, -3080)
+metadata/route = true
+metadata/kind = "candy_tin"
+
+[node name="Sprite" type="Sprite2D" parent="Platforms/12_candy_tin" unique_id=1624219831]
+position = Vector2(0, 80)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("17_1y0ep")
+
+[node name="AlphaCollision00" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1019422812]
+polygon = PackedVector2Array(65.100006, 16.580078, 67.34, 26.659912, 67.2, 26.659912)
+
+[node name="AlphaCollision01" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=565169453]
+polygon = PackedVector2Array(-64.4, 40.93994, -66.92, 19.939941, -66.78, 19.939941, -64.26, 40.93994)
+
+[node name="AlphaCollision02" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1017208104]
+polygon = PackedVector2Array(-3.5, 3.4199219, -3.5, 3.2800293, 52.92, 9.439941, 52.92, 9.580078)
+
+[node name="AlphaCollision03" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=2122054827]
+polygon = PackedVector2Array(16.520004, 155.73999, -17.64, 155.73999, -17.64, 155.6001, 67.2, 26.659912)
+
+[node name="AlphaCollision04" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1433099358]
+polygon = PackedVector2Array(67.2, 26.659912, 63.42, 140.47998, 63.28, 140.47998)
+
+[node name="AlphaCollision05" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1744997289]
+polygon = PackedVector2Array(-17.64, 155.6001, -43.68, 150.69995, -43.68, 150.56006, 67.2, 26.659912)
+
+[node name="AlphaCollision06" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=732627677]
+polygon = PackedVector2Array(-43.68, 150.56006, -57.96, 144.54004, -57.96, 144.3999, 67.2, 26.659912)
+
+[node name="AlphaCollision07" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=554529316]
+polygon = PackedVector2Array(-48.020004, 8.600098, -3.5, 3.4199219, 52.92, 9.580078, 65.100006, 16.300049, 65.100006, 16.580078, -64.26, 40.93994, -66.78, 19.939941)
+
+[node name="AlphaCollision08" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=705017336]
+polygon = PackedVector2Array(67.2, 26.659912, 63.28, 140.47998, 47.600006, 149.58008, 47.179993, 149.58008)
+
+[node name="AlphaCollision09" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1410571576]
+polygon = PackedVector2Array(67.2, 26.659912, 47.179993, 149.58008, 18.199997, 155.73999, 16.520004, 155.73999)
+
+[node name="AlphaCollision10" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=1843384880]
+polygon = PackedVector2Array(67.2, 26.659912, -57.96, 144.3999, -65.24, 136.41992, -65.24, 135.30005, -64.26, 40.93994, 65.100006, 16.580078)
+
+[node name="AlphaCollision11" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=264480620]
+polygon = PackedVector2Array(-48.58, 8.600098, -48.020004, 8.600098, -66.78, 19.939941, -60.339996, 13.219971)
+
+[node name="AlphaCollision12" type="CollisionPolygon2D" parent="Platforms/12_candy_tin" unique_id=2080513742]
+polygon = PackedVector2Array(-60.339996, 13.219971, -66.78, 19.939941, -60.619995, 13.219971)
+
+[node name="13_red_food_container" type="StaticBody2D" parent="Platforms" unique_id=1844466203 instance=ExtResource("18_lkgrj")]
+position = Vector2(-120, -3240)
+metadata/route = true
+metadata/kind = "red_food_container"
+
+[node name="14_kimchi_bowl" type="StaticBody2D" parent="Platforms" unique_id=1393392214 instance=ExtResource("19_8uj7o")]
+position = Vector2(180, -3400)
+metadata/route = true
+metadata/kind = "kimchi_bowl"
+
+[node name="15_tennis_rope_toy" type="StaticBody2D" parent="Platforms" unique_id=1894767338 instance=ExtResource("20_6be7x")]
+position = Vector2(450, -3560)
+metadata/route = true
+metadata/kind = "tennis_rope_toy"
+
+[node name="16_plush_fish" type="StaticBody2D" parent="Platforms" unique_id=123759137 instance=ExtResource("21_elnmq")]
+position = Vector2(180, -3720)
+metadata/route = true
+metadata/kind = "plush_fish"
+
+[node name="17_spiky_bone_toy" type="StaticBody2D" parent="Platforms" unique_id=305379194 instance=ExtResource("22_883u7")]
+position = Vector2(-140, -3880)
+metadata/route = true
+metadata/kind = "spiky_bone_toy"
+
+[node name="18_plush_cow" type="StaticBody2D" parent="Platforms" unique_id=592226965 instance=ExtResource("23_gf8me")]
+position = Vector2(-430, -4040)
+metadata/route = true
+metadata/kind = "plush_cow"
+
+[node name="19_vegetable_toys" type="StaticBody2D" parent="Platforms" unique_id=1359448962 instance=ExtResource("24_unnew")]
+position = Vector2(-130, -4200)
+metadata/route = true
+metadata/kind = "vegetable_toys"
+
+[node name="20_bumpy_balls" type="StaticBody2D" parent="Platforms" unique_id=2005381474 instance=ExtResource("25_u50u3")]
+position = Vector2(200, -4360)
+metadata/route = true
+metadata/kind = "bumpy_balls"
+
+[node name="21_wavy_rope" type="StaticBody2D" parent="Platforms" unique_id=1056247131 instance=ExtResource("26_sp4jm")]
+position = Vector2(460, -4520)
+metadata/route = true
+metadata/kind = "wavy_rope"
+
+[node name="22_chicken_bone_toy" type="StaticBody2D" parent="Platforms" unique_id=373982731 instance=ExtResource("27_15m1w")]
+position = Vector2(180, -4680)
+metadata/route = true
+metadata/kind = "chicken_bone_toy"
+
+[node name="23_plush_elephant" type="StaticBody2D" parent="Platforms" unique_id=162048987 instance=ExtResource("28_k4wd3")]
+position = Vector2(-160, -4840)
+metadata/route = true
+metadata/kind = "plush_elephant"
+
+[node name="24_braided_rope" type="StaticBody2D" parent="Platforms" unique_id=1346798951 instance=ExtResource("29_dhgnq")]
+position = Vector2(-440, -5000)
+metadata/route = true
+metadata/kind = "braided_rope"
+
+[node name="25_rope_ball" type="StaticBody2D" parent="Platforms" unique_id=306839426 instance=ExtResource("30_ql6co")]
+position = Vector2(-120, -5160)
+metadata/route = true
+metadata/kind = "rope_ball"
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=685240657]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=23045564]
+position = Vector2(-193.5, 500)
+shape = SubResource("ground")
+
+[node name="GroundVisual" type="Node2D" parent="Ground" unique_id=873355789]
+z_index = -5
+script = ExtResource("31_w4xgk")
+
+[node name="Dog" type="CharacterBody2D" parent="." unique_id=771615588]
+z_index = 5
+position = Vector2(-550, -5)
+script = ExtResource("32_1u7a0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog" unique_id=1004258271]
+position = Vector2(0, -40)
+shape = SubResource("dog_shape")
+
+[node name="Visual" type="AnimatedSprite2D" parent="Dog" unique_id=1006331851]
+position = Vector2(0, -44.4)
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("33_7a78b")
+animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1658256474]
+position = Vector2(-192.5, -330)
+zoom = Vector2(0.76, 0.76)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=886232034]
+
+[node name="Status" type="Label" parent="HUD" unique_id=1236674142]
+offset_left = 20.0
+offset_top = 18.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2

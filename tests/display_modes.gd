@@ -4,7 +4,7 @@ func _initialize() -> void:
 func run() -> void:
 	var settings := root.get_node("DisplaySettings")
 	# Keep the player's saved preference untouched.
-	settings.config_path = "user://display_mode_test.cfg"
+	settings.config_path = "/private/tmp/ddong-puppy-display-mode-test.cfg"
 	var lobby = load("res://lobby.tscn").instantiate()
 	root.add_child(lobby)
 	await process_frame

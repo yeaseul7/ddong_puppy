@@ -7,8 +7,6 @@
 
 - sheet.png: 실제 알파 투명도를 포함한 12포즈 시트.
 - animations.tres: idle 4프레임, run 4프레임, jump/double_jump/fall/land 각 1포즈.
-- preview.tres: 편집기 미리보기.
-- tools/build_cartoon_frames.gd: 영역별 알파 경계로 AtlasTexture를 정렬. 공통 384px 캔버스, 발 기준선 340px.
 - 게임 적용 크기 0.3, 발 기준 오프셋 -44.4px. 기존 이동 속도·점프·충돌은 유지.
 
 실제 플레이 화면에서 투명 배경과 착지 위치를 확인했고 69개 구간 이동 테스트가 통과했습니다.

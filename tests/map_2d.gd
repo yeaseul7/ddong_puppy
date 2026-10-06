@@ -20,13 +20,6 @@ func run() -> void:
 			push_error("Unstable start before "+platform.name)
 			quit(1)
 			return
-		if count == 4:
-			Input.action_press("right")
-			for i in 80:
-				await tick()
-				if dog.position.x >= 250: break
-			Input.action_release("right")
-			previous = dog.position
 		Input.action_press("jump")
 		await tick(2)
 		Input.action_release("jump")
@@ -45,9 +38,12 @@ func run() -> void:
 			elif hold>0: hold-=1
 			else: Input.action_release("jump")
 			await tick()
-			if dog.is_on_floor() and absf(dog.position.y-platform.position.y)<16:
-				landed = true
-				break
+			if dog.is_on_floor():
+				for collision_index in dog.get_slide_collision_count():
+					if dog.get_slide_collision(collision_index).get_collider() == platform:
+						landed = true
+						break
+				if landed: break
 		for action in ["left","right","jump"]: Input.action_release(action)
 		if not landed:
 			push_error("Cannot reach %s at %s: ended %s" % [platform.name,platform.position,dog.position])
